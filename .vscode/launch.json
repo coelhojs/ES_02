@@ -1,0 +1,146 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aula01<AED 2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aula01",
+            "args": "",
+            "projectName": "AED 2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RevisaoAED<Ex00_RevisaoAED>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "RevisaoAED",
+            "args": "",
+            "projectName": "Ex00_RevisaoAED"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex01_IMC>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex01_IMC"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex01_RevisaoAED>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex01_RevisaoAED"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex07_Estoque>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex07_Estoque"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex08_Estoque_heranca>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex08_Estoque_heranca"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex2_Produto>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex2_Produto"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex3_Produto>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex3_Produto"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex4_Produto_static>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex4_Produto_static"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex5_Produto_final>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex5_Produto_final"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Aplicacao<Ex6_Produto_destrutor>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Aplicacao",
+            "args": "",
+            "projectName": "Ex6_Produto_destrutor"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": "<debug port of remote debuggee>"
+        }
+    ]
+}
