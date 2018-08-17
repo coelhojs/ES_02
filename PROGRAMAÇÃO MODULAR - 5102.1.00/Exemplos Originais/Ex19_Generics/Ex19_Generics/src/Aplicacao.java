@@ -1,13 +1,13 @@
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 
 public class Aplicacao {
 	private class Professor {
 
 	}
 
-	/**
+	*//**
 	 * Exemplo ilustrando o código como era feito na versão Java 1.4
-	 */
+	 *//*
 	public static void Array14() {
 		ArrayList listaDeProfessores = new ArrayList();
 
@@ -43,3 +43,4 @@ public class Aplicacao {
 
 	}
 }
+*/

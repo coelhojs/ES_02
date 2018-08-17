@@ -1,4 +1,4 @@
-
+/*
 public class Aula02 {
 //MÉTODOS RECURSIVOS
 	boolean verificaigualdade (String primeira, String segunda) {
@@ -15,3 +15,4 @@ public class Aula02 {
 	};
 	String toUpper (String palavra);
 }
+*/

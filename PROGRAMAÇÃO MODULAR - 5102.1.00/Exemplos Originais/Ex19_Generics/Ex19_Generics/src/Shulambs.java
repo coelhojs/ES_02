@@ -1,4 +1,4 @@
-public class Shulambs<T> {
+/*public class Shulambs<T> {
 	private T campo; // ok
 	private T[] arranjo; // ok
 
@@ -7,3 +7,4 @@ public class Shulambs<T> {
 		arranjo = new T[10]; // erro
 	}
 }
+*/
