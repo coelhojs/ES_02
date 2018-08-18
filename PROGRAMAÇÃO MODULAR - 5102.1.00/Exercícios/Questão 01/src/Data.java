@@ -1,22 +1,43 @@
+import java.util.Calendar;
 
 public class Data {
-	public Data(int ano, int mes, int dia);
+	private int ano;
+	private int mes;
+	private int dia;
 
-	public Data(); // hoje
+	public Data(int ano, int mes, int dia) {
+		this.ano = ano;
+		this.mes = mes;
+		this.dia = dia;
+	}
 
-	public int getDia(), getMes(), getAno();
+	public Data() {
+	}
 
-	public void adicionaDias(int dias); // avanca a data em dias
+	public int getAno() {
+		return ano;
+	}
 
-	public int diasNoMes();
+	public int getMes() {
+		return mes;
+	}
 
-	public String diaDaSemana(); // ex . " Segunda−f e i r a "
+	public int getDia() {
+		return dia;
+	}
 
-	public boolean equals(Object o);
+	public void adicionaDias(int dia) {
+		Calendar cal = Calendar.getInstance();
+		int lastDay = 31;
+		int intervalDays = 0;
 
-	public boolean eAnoBisexto();
+		this.dia += dia;
 
-	public void proximoDia(); // avanca um dia
+		if (this.dia > lastDay) {
+			intervalDays = this.dia - lastDay;
+			this.mes++;
+			this.dia = intervalDays;
+		}
 
-	public String toString();
+	}
 }
