@@ -1,4 +1,4 @@
-
+/*
 public class ShulambsFixed<T> {
 	private T campo;
 	private T[] arranjo;
@@ -9,3 +9,4 @@ public class ShulambsFixed<T> {
 		arranjo = (T[]) new Object[10];
 	}
 }
+*/

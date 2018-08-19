@@ -26,10 +26,7 @@ class Aplicacao {
 		// Coletor de lixo ainda não foi executado.
 		System.out.println("\nInstancias prods: " + Produto.getInstancias());
 
-		System.gc();
-
-		int i = System.in.read();
-		
+		System.gc();		
 
 		// Coletor de lixo já foi executado.
 		System.out.println("\nInstancias prods: " + Produto.getInstancias());

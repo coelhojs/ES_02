@@ -1,4 +1,4 @@
-class MultiCatch {
+/*class MultiCatch {
   public static void main(String args[]) {
     int a = 88, b = 0;
     int result;
@@ -19,4 +19,4 @@ class MultiCatch {
 
     System.out.println("Apos multi-catch.");
   }
-}
+}*/
