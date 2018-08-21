@@ -1,5 +1,3 @@
-import java.util.Calendar;
-
 public class Data {
 	private int ano;
 	private int mes;
@@ -27,7 +25,6 @@ public class Data {
 	}
 
 	public void adicionaDias(int dia) {
-		Calendar cal = Calendar.getInstance();
 		int lastDay = 31;
 		int intervalDays = 0;
 

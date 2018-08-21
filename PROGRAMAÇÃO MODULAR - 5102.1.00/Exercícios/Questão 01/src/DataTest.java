@@ -4,12 +4,12 @@ import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 class DataTest {
-	Data data;
-	
+	Data data = new Data(2018, 8, 20);
+
 	@Before
 	public void setup() throws Exception {
-	Data data = new Data(2018, 8, 20);
 	}
+
 	@Test
 	void testAdicionaDias() {
 		data.adicionaDias(3);
