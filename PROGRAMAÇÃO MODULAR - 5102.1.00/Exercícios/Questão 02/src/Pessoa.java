@@ -5,10 +5,10 @@ public class Pessoa {
 	private String sexo;
 
 	public Pessoa(String nome, long cpf, int idade, String sexo) {
-		this.nome = nome; // "Cristiano";
-		this.cpf = cpf; // 11254085610L;
-		this.idade = idade; // 24;
-		this.sexo = sexo; // "masculino";
+		this.nome = nome;
+		this.cpf = cpf;
+		this.idade = idade;
+		this.sexo = sexo;
 
 	}
 
