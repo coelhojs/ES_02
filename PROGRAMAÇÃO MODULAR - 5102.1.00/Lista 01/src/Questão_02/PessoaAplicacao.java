@@ -1,3 +1,4 @@
+package Questão_02;
 
 public class PessoaAplicacao {
 
