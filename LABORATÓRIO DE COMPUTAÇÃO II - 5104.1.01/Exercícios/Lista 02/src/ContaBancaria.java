@@ -1,60 +1,44 @@
-/*1 - Implemente a classe conta descrita anteriormente. Crie os atributos citados e mais um identiﬁ-
-cador para o número da conta corrente. Crie um método main que constroi dois objetos da classe conta
-utilizando a cláusula new como descrito na classe Data. Teste as funções sacar e depositar, imprimindo
-os resultados na tela.*/
-
 public class ContaBancaria {
-	private float saldoConta, saldoMinimoConta;
-	public float saldo, saldoMinimo;
+	private float saldo, saldoMinimo;
 
 	ContaBancaria(float saldo) {
-		this.saldoConta = saldo;
+		this.saldo = saldo;
 	}
 
 	ContaBancaria(float saldo, float saldoMinimo) {
-		this.saldoConta = saldo;
-		this.saldoMinimoConta = saldoMinimo;
+		this.saldo = saldo;
+		this.saldoMinimo = saldoMinimo;
 	}
 
 	public float getSaldo() {
-		return saldoConta;
+		return this.saldo;
 	}
 
 	public float getSaldoMinimo() {
-		return saldoMinimoConta;
+		return this.saldoMinimo;
 	}
 
 	public void setSaldo(float saldo) {
-		this.saldoConta = saldo;
+		this.saldo = saldo;
 	}
 
 	public void setSaldoMinimo(float saldoMinimo) {
-		this.saldoMinimoConta = saldoMinimo;
+		this.saldoMinimo = saldoMinimo;
 	}
 
 	float sacar(float quantia) {
-		saldo = getSaldo();
-		saldo -= quantia;
-		setSaldo(saldo);
-		return saldo;
+		setSaldo(getSaldo() - quantia);
+		return this.saldo;
 	}
 
 	float depositar(float quantia) {
-		float saldoAnterior = getSaldo();
-		setSaldo(saldoAnterior + quantia);
-		saldo = getSaldo();
-		return saldo;
+		setSaldo(getSaldo() + quantia);
+		return this.saldo;
 	}
 
 	float alterarSaldoMinimo(float novoSaldoMinimo) {
 		setSaldoMinimo(novoSaldoMinimo);
-		saldoMinimo = getSaldoMinimo();
-		return saldoMinimo;
-	}
-
-	float consultarSaldo() {
-		saldo = getSaldo();
-		return saldo;
+		return this.saldoMinimo;
 	}
 
 	public static void main(String[] args) {
@@ -65,9 +49,15 @@ public class ContaBancaria {
 		System.out.println("Sacando R$ 851,45. Novo saldo : " + CJoao.sacar(851.45F));
 		System.out.println(" ");
 		System.out.println("O saldo de inicial de Pedro e: " + CPedro.getSaldo());
-		System.out.println("Depositando 9110,21 reais na conta do Pedro, o novo saldo é: " + CPedro.depositar(9110.21F));
+		System.out.println("Depositando R$ 9110,21 na conta do Pedro, o novo saldo é: " + CPedro.depositar(9110.21F));
 		System.out.println("Sacando R$ 8,78. Novo saldo : " + CPedro.sacar(8.78F));
 
-	}
+		ContaBancaria[] c = new ContaBancaria[10];
 
+		for (int i = 0; i < c.length; i++) {
+			c[i] = new ContaBancaria(0);
+		}
+		c[0].depositar(200);
+
+	}
 }

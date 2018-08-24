@@ -1,4 +1,4 @@
-
+/*
 public class Aplicacao {
 	public static void main(String args[]) {
 		Produto p1 = new Produto();
@@ -7,3 +7,4 @@ public class Aplicacao {
 		p1.setQuant();
 	}
 }
+*/
