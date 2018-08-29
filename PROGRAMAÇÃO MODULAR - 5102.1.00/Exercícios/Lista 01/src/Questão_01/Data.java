@@ -3,44 +3,39 @@ package Questão_01;
 import java.time.LocalDate;
 
 public class Data {
-	private int ano;
-	private int mes;
+	private LocalDate hoje;
 	private int dia;
-	private LocalDate data; 
-	
+	private int mes;
+	private int ano;
+
+	public Data(int ano, int mes, int dia) {
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
+	}
+
 	public Data() {
-		
-		data = LocalDate.now();
-		
-		this.ano = data.getYear();
-		this.mes = data.getMonthValue();
-		this.dia = data.getDayOfMonth();
-		
-	}
 
-	public int getAno() {
-		return ano;
-	}
+		hoje = LocalDate.now();
 
-	public int getMes() {
-		return mes;
+		this.dia = hoje.getDayOfMonth();
+		this.mes = hoje.getMonthValue();
+		this.ano = hoje.getYear();
 	}
 
 	public int getDia() {
 		return dia;
 	}
 
-	public void adicionaDias(int dia) {
-		int lastDay = 31;
-		int intervalDays = 0;
+	public int getMes() {
+		return mes;
+	}
 
-		this.dia += dia;
+	public int getAno() {
+		return ano;
+	}
 
-		if (this.dia > lastDay) {
-			intervalDays = this.dia - lastDay;
-			this.mes++;
-			this.dia = intervalDays;
-		}
-
+	public void adicionaDias(int dias) {
+		LocalDate novaData = hoje.plusDays(dias);	
 	}
 }
