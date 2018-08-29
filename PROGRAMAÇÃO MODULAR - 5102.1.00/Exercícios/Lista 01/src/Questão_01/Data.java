@@ -3,7 +3,7 @@ package Questão_01;
 import java.time.LocalDate;
 
 public class Data {
-	private LocalDate hoje;
+	private LocalDate data;
 	private int dia;
 	private int mes;
 	private int ano;
@@ -16,11 +16,11 @@ public class Data {
 
 	public Data() {
 
-		hoje = LocalDate.now();
+		this.data = LocalDate.now();
 
-		this.dia = hoje.getDayOfMonth();
-		this.mes = hoje.getMonthValue();
-		this.ano = hoje.getYear();
+		this.dia = data.getDayOfMonth();
+		this.mes = data.getMonthValue();
+		this.ano = data.getYear();
 	}
 
 	public int getDia() {
@@ -35,7 +35,15 @@ public class Data {
 		return ano;
 	}
 
+	public LocalDate getData() {
+		return data;
+	}
+
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+
 	public void adicionaDias(int dias) {
-		LocalDate novaData = hoje.plusDays(dias);	
+		setData(data.plusDays(dias));	
 	}
 }
