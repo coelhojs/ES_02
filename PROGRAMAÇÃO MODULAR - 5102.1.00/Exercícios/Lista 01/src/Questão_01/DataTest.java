@@ -15,4 +15,9 @@ class DataTest {
 		data.adicionaDias(3);
 		assertEquals(1, data.getDia());
 	}
+	
+	@Test
+	void testDiasNoMes() {
+		
+	}
 }

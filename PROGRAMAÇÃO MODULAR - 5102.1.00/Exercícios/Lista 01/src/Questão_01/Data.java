@@ -1,6 +1,7 @@
 package Questão_01;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Data {
 	private LocalDate data;
@@ -9,15 +10,15 @@ public class Data {
 	private int ano;
 
 	public Data(int ano, int mes, int dia) {
-		this.dia = dia;
-		this.mes = mes;
-		this.ano = ano;
+		this.data = LocalDate.of(ano, mes, dia);
+		this.dia = data.getDayOfMonth();
+		this.mes = data.getMonthValue();
+		this.ano = data.getYear();
 	}
 
 	public Data() {
 
 		this.data = LocalDate.now();
-
 		this.dia = data.getDayOfMonth();
 		this.mes = data.getMonthValue();
 		this.ano = data.getYear();
@@ -44,6 +45,6 @@ public class Data {
 	}
 
 	public void adicionaDias(int dias) {
-		setData(data.plusDays(dias));	
+		setData(data.plusDays(dias));
 	}
 }

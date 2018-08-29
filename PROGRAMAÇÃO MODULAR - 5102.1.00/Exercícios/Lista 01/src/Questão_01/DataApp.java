@@ -1,17 +1,17 @@
 package Questão_01;
 
+import java.time.format.DateTimeFormatter;
+
 public class DataApp {
 
 	public static void main(String[] args) {
 
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 		Data data = new Data();
 
-		// Data atual:
-		data.adicionaDias(50);
 		System.out.println("Hoje: " + data.getDia() + "/" + data.getMes() + "/" + data.getAno());
-		// Adicionando 50 dias, a nova data será:
-		// System.out.println("Nova data: " + );
-
+		data.adicionaDias(50);
+		System.out.println("Nova data: " + formatter.format(data.getData()));
 	}
 
 }
