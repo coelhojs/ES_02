@@ -2,6 +2,9 @@ package Questão_01;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Formatter;
+import java.util.Locale;
 
 public class Data {
 	private LocalDate data;
@@ -52,18 +55,18 @@ public class Data {
 	}
 
 	public int diasNoMes() {
-		int diasNoMes = data.lengthOfMonth();
+		int diasNoMes = this.data.lengthOfMonth();
 		return diasNoMes;
 
 	}
 
 	public String diaDaSemana() {
-		DayOfWeek diaDaSemana = data.getDayOfWeek();
+		String diaDaSemana = getData().format(DateTimeFormatter.ofPattern("EEEE", new Locale("pt", "BR")));
 		return diaDaSemana.toString();
 	}
 
 	public boolean eAnoBissexto() {
-		boolean eAnoBissexto = data.isLeapYear();
+		boolean eAnoBissexto = this.data.isLeapYear();
 		return eAnoBissexto;
 	}
 }

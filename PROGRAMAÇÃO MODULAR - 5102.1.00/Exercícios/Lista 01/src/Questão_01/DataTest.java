@@ -12,7 +12,7 @@ class DataTest {
 	}
 
 	@Test
-	void testAdicionaDias(int dias) {
+	void testAdicionaDias() {
 		data.adicionaDias(3);
 		String novaData = data.getData().toString();
 		assertEquals("2018-09-01", novaData);

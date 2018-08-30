@@ -1,19 +1,24 @@
 package Questão_01;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class DataApp {
 
 	public static void main(String[] args) {
 
-		Data data = new Data(2018, 8, 29);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 
-		System.out.println("Hoje: " + formatter.format(data.getData()));
+		Data hoje = new Data();
+		System.out.println("Hoje: " + formatter.format(hoje.getData()));
+		Data data = new Data(2018, 8, 29);
+		System.out.println("Data definida: " + formatter.format(data.getData()));
 		System.out.println("Dias no mês " + data.getMes() + ": " + data.diasNoMes());
 		data.adicionaDias(3);
 		System.out.println("Nova data: " + formatter.format(data.getData()));
-		System.out.println(data.getData().toString());
+		System.out.println("Dia da semana: " + data.diaDaSemana());
+
 	}
 
 }
