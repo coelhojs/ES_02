@@ -1,14 +1,15 @@
-package Questão_03;
+package Questão_04;
 
 public class Conta {
 	private int conta = 0;
 	private int agencia;
 	private String nomeCliente;
 	private float saldo;
-
-	public Conta(String nomeCliente, int conta, float saldo) {
-		this.conta = conta;
-		this.agencia = 0001;
+	private static int identificador = 1;
+	
+	public Conta(String nomeCliente, int conta, int agencia, float saldo) {
+		this.conta = identificador++;
+		this.agencia = agencia;
 		this.nomeCliente = nomeCliente;
 		this.saldo = saldo;
 	}

@@ -1,11 +1,11 @@
-package Questão_03;
+package Questão_04;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class ContaTest {
 
-	Conta conta = new Conta("Cristiano", 2321, 20);
+	Conta conta = new Conta("Cristiano", 2321, 90, 20);
 
 	@Test
 	public void testDepositar() {

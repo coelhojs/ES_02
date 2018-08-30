@@ -1,4 +1,5 @@
 package Questão_02;
+
 public class Pessoa {
 	private String nome;
 	private long cpf;
@@ -12,28 +13,28 @@ public class Pessoa {
 		this.sexo = sexo;
 
 	}
-	
+
 	public Pessoa() {
 		this.nome = "Nome Padrão";
 		this.cpf = 12345678910L;
-		this.idade = 30;
+		this.idade = 99;
 		this.sexo = "Feminino";
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	public long getCpf() {
-		return cpf;
+		return this.cpf;
 	}
 
 	public int getIdade() {
-		return idade;
+		return this.idade;
 	}
 
 	public String getSexo() {
-		return sexo;
+		return this.sexo;
 	}
 
 	public void setNome(String nome) {
@@ -60,14 +61,4 @@ public class Pessoa {
 			return false;
 		}
 	}
-
-	public Boolean cpfTypeLong() {
-		cpf = getCpf();
-		if (cpf == 11254085610L/* cpf instanceof long */) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 }
