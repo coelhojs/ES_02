@@ -1,4 +1,4 @@
-package Questão_01;
+package Questão_03;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ class DataTest {
 	@Test
 	void testDiaDaSemana() {
 		String diaDaSemana = data.diaDaSemana();
-		assertEquals("WEDNESDAY", diaDaSemana);
+		assertEquals("Quarta-feira", diaDaSemana);
 	}
 
 	@Test
@@ -41,5 +41,11 @@ class DataTest {
 		data.proximoDia();
 		int proximoDia = data.getDia();
 		assertEquals(30, proximoDia);
+	}
+	
+	@Test
+	void testPorExtenso() {
+		String porExtenso = data.porExtenso();
+		assertEquals("29 de Agosto de 2018", porExtenso);
 	}
 }
