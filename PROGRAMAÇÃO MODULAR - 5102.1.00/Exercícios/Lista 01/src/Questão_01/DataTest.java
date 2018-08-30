@@ -1,10 +1,11 @@
 package Questão_01;
-import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
-	Data data = new Data();
+	Data data = new Data(2018, 8, 29);
 
 	@Before
 	public void setup() throws Exception {
@@ -13,11 +14,33 @@ class DataTest {
 	@Test
 	void testAdicionaDias(int dias) {
 		data.adicionaDias(3);
-		assertEquals(1, data.getDia());
+		String novaData = data.getData().toString();
+		assertEquals("2018-09-01", novaData);
+	}
+
+	@Test
+	void testDiasNoMes() {
+		int mesAtual = data.diasNoMes();
+		assertEquals(31, mesAtual);
 	}
 	
 	@Test
-	void testDiasNoMes() {
+	void testDiaDaSemana() {
+		String diaDaSemana = data.diaDaSemana();
+		assertEquals("WEDNESDAY", diaDaSemana);
+	}
+	
+	@Test
+	void testEAnoBissexto() {
+		boolean eAnoBissexto = data.eAnoBissexto();
+		assertEquals(false, eAnoBissexto);
+	}
+	
+	@Test
+	void testProximoDia() {
+		data.adicionaDias(1);
+		int proximoDia = data.getDia();
+		assertEquals(30, proximoDia);
 		
 	}
 }

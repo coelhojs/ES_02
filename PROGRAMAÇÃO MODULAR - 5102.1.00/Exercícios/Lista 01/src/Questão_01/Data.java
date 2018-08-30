@@ -1,7 +1,7 @@
 package Questão_01;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Data {
 	private LocalDate data;
@@ -42,9 +42,28 @@ public class Data {
 
 	public void setData(LocalDate data) {
 		this.data = data;
+		this.ano = data.getYear();
+		this.mes = data.getMonthValue();
+		this.dia = data.getDayOfMonth();
 	}
 
 	public void adicionaDias(int dias) {
-		setData(data.plusDays(dias));
+		setData(this.data.plusDays(dias));
+	}
+
+	public int diasNoMes() {
+		int diasNoMes = data.lengthOfMonth();
+		return diasNoMes;
+
+	}
+
+	public String diaDaSemana() {
+		DayOfWeek diaDaSemana = data.getDayOfWeek();
+		return diaDaSemana.toString();
+	}
+
+	public boolean eAnoBissexto() {
+		boolean eAnoBissexto = data.isLeapYear();
+		return eAnoBissexto;
 	}
 }
