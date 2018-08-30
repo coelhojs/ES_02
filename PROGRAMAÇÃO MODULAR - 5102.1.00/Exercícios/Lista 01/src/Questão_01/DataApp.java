@@ -1,8 +1,6 @@
 package Questão_01;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 public class DataApp {
 
@@ -12,12 +10,15 @@ public class DataApp {
 
 		Data hoje = new Data();
 		System.out.println("Hoje: " + formatter.format(hoje.getData()));
-		Data data = new Data(2018, 8, 29);
+		Data data = new Data(1994, 3, 15);
 		System.out.println("Data definida: " + formatter.format(data.getData()));
 		System.out.println("Dias no mês " + data.getMes() + ": " + data.diasNoMes());
 		data.adicionaDias(3);
-		System.out.println("Nova data: " + formatter.format(data.getData()));
+		System.out.println("Adicionando 3 dias. Nova data: " + formatter.format(data.getData()));
 		System.out.println("Dia da semana: " + data.diaDaSemana());
+		System.out.println("É ano bissexto? " + data.eAnoBissexto());
+		data.proximoDia();
+		System.out.println("Próximo dia após a nova data: " + formatter.format(data.getData()));
 
 	}
 

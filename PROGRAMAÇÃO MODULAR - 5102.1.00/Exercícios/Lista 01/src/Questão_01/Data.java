@@ -1,9 +1,7 @@
 package Questão_01;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Formatter;
 import java.util.Locale;
 
 public class Data {
@@ -20,7 +18,6 @@ public class Data {
 	}
 
 	public Data() {
-
 		this.data = LocalDate.now();
 		this.dia = data.getDayOfMonth();
 		this.mes = data.getMonthValue();
@@ -32,15 +29,15 @@ public class Data {
 	}
 
 	public int getMes() {
-		return mes;
+		return this.mes;
 	}
 
 	public int getAno() {
-		return ano;
+		return this.ano;
 	}
 
 	public LocalDate getData() {
-		return data;
+		return this.data;
 	}
 
 	public void setData(LocalDate data) {
@@ -68,5 +65,9 @@ public class Data {
 	public boolean eAnoBissexto() {
 		boolean eAnoBissexto = this.data.isLeapYear();
 		return eAnoBissexto;
+	}
+
+	public void proximoDia() {
+		setData(this.data.plusDays(1));
 	}
 }
