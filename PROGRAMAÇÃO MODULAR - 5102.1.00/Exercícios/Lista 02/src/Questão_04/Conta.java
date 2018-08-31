@@ -1,16 +1,18 @@
 package Questão_04;
 
 public class Conta {
-	private int conta = 0;
-	private int agencia;
+	private int id;
 	private String nomeCliente;
+	private int agencia;
+	private int conta = 0;
 	private float saldo;
 	private static int identificador = 1;
-	
+
 	public Conta(String nomeCliente, int conta, int agencia, float saldo) {
-		this.conta = identificador++;
-		this.agencia = agencia;
+		this.id = identificador++;
 		this.nomeCliente = nomeCliente;
+		this.agencia = agencia;
+		this.conta = conta;
 		this.saldo = saldo;
 	}
 
@@ -36,6 +38,10 @@ public class Conta {
 
 	public void sacar(float quantia) {
 		this.saldo -= quantia;
+	}
+
+	public int getID() {
+		return this.id;
 	}
 
 }
