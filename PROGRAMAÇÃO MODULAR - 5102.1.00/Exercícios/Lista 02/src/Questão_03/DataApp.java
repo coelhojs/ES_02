@@ -10,15 +10,11 @@ public class DataApp {
 		System.out.println("Data definida: " + data.formatoBarra.format(data.getData()));
 		System.out.println("Dias no mês " + data.getMes() + ": " + data.diasNoMes());
 		data.adicionaDias(3);
-		//int maisDias = Integer.parseInt(JOptionPane.showInputDialog("Digite os dias a adicionar: "));
-		//data.adicionaDias(maisDias);
 		System.out.println("Adicionando 3 dias. Nova data: " + data.formatoBarra.format(data.getData()));
 		System.out.println("Dia da semana: " + data.diaDaSemana());
 		System.out.println("É ano bissexto? " + data.eAnoBissexto());
 		data.proximoDia();
 		System.out.println("Próximo dia após a nova data: " + data.formatoBarra.format(data.getData()));
 		System.out.println("Data por extenso: " + data.porExtenso());
-		
 	}
-
 }

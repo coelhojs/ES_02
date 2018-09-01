@@ -4,7 +4,7 @@ public class Conta {
 	private int id;
 	private String nomeCliente;
 	private int agencia;
-	private int conta = 0;
+	private int conta;
 	private float saldo;
 	private static int identificador = 1;
 
@@ -14,6 +14,10 @@ public class Conta {
 		this.agencia = agencia;
 		this.conta = conta;
 		this.saldo = saldo;
+	}
+	
+	public int getID() {
+		return this.id;
 	}
 
 	public int getConta() {
@@ -38,10 +42,6 @@ public class Conta {
 
 	public void sacar(float quantia) {
 		this.saldo -= quantia;
-	}
-
-	public int getID() {
-		return this.id;
 	}
 
 }

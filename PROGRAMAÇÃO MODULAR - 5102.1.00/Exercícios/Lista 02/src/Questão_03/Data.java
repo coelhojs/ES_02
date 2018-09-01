@@ -5,11 +5,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class Data {
-	
+
 	private int dia;
 	private int mes;
 	private int ano;
 	private LocalDate data;
+
 	DateTimeFormatter formatoBarra = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 	DateTimeFormatter formatoPorExtenso = DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' YYYY");
 	DateTimeFormatter formatoDiaSemana = DateTimeFormatter.ofPattern("EEEE", new Locale("pt", "BR"));
