@@ -1,14 +1,16 @@
 package Questão_03;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
-	Data data = new Data(2018, 8, 29);
-
+	Data data;
+	
 	@Before
 	public void setup() throws Exception {
+		data = new Data(2018, 8, 29);
 	}
 
 	@Test
