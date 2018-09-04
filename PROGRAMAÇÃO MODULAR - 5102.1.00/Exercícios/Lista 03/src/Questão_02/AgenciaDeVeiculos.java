@@ -12,6 +12,28 @@ public class AgenciaDeVeiculos {
 		System.out.println("Preço: " + carro.getPreco());
 		System.out.println("Cor: " + carro.getCor());
 		System.out.println();
-	}
 
+		System.out.println("Caminhão:");
+		System.out.println("Velocidade: " + caminhao.getVelocidade());
+		System.out.println("Preço: " + caminhao.getPreco());
+		System.out.println("Preço de Venda: " + caminhao.getPrecoVenda());
+		System.out.println("Cor: " + caminhao.getCor());
+		System.out.println("Carga: " + caminhao.getCarga());
+		System.out.println();
+
+		System.out.println("Fiat:");
+		System.out.println("Velocidade: " + fiat.getVelocidade());
+		System.out.println("Preço: " + fiat.getPreco());
+		System.out.println("Preço de Venda: " + fiat.getPrecoVenda());
+		System.out.println("Cor: " + fiat.getCor());
+		System.out.println();
+
+		System.out.println("Sedan:");
+		System.out.println("Velocidade: " + sedan.getVelocidade());
+		System.out.println("Preço: " + sedan.getPreco());
+		System.out.println("Preço de Venda: " + sedan.getPrecoVenda());
+		System.out.println("Comprimento: " + sedan.getComprimento());
+		System.out.println("Cor: " + sedan.getCor());
+		System.out.println();
+	}
 }

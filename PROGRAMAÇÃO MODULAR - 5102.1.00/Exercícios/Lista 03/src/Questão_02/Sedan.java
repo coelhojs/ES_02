@@ -8,14 +8,21 @@ public class Sedan extends Carro {
 		this.comprimento = comprimento;
 	}
 
+	public Sedan() {
+		
+	}
+	
+	public int getComprimento() {
+		return comprimento;
+	}
+
 	public double getPrecoVenda() {
 		double precoVenda;
-		if (comprimento > 6) {
+		if (getComprimento() > 6) {
 			precoVenda = getPreco() * 0.95;
 		} else {
 			precoVenda = getPreco() * 0.9;
 		}
 		return precoVenda;
 	}
-
 }

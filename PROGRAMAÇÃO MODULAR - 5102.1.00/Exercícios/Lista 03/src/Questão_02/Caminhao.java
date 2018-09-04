@@ -18,11 +18,10 @@ public class Caminhao extends Carro {
 	public double getPrecoVenda() {
 		double precoVenda;
 		if (getCarga() > 2000) {
-			precoVenda = getPrecoVenda() * 0.9;
+			precoVenda = getPreco() * 0.9;
 		} else {
-			precoVenda = getPrecoVenda() * 0.8;
+			precoVenda = getPreco() * 0.8;
 		}
 		return precoVenda;
 	}
-
 }
