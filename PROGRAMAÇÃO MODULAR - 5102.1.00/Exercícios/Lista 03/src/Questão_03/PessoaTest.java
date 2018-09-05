@@ -1,9 +1,17 @@
 package Questão_03;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class PessoaTest {
-	Pessoa pessoa = new Pessoa("Cristiano", 11254085610L, 24, "masculino");
+	Pessoa pessoa;
+
+	@BeforeEach
+	void setUp() throws Exception {
+		pessoa = new Pessoa("Cristiano");
+	}
 
 	@Test
 	void testMaiorIdade() {

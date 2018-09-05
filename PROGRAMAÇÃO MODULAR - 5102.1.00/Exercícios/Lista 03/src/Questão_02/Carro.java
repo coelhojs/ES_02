@@ -26,6 +26,10 @@ public class Carro {
 	public String getCor() {
 		return cor;
 	}
+	
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
 
 	public double getPrecoVenda() {
 		double precoVenda = getPreco() * 1.35;

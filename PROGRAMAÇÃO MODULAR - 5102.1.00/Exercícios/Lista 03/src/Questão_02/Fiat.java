@@ -17,8 +17,8 @@ public class Fiat extends Carro {
 	}
 
 	public double getPrecoVenda() {
-		
-		double precoVenda = getPreco() * ((100 - (double)getDescontoDeFabrica()) / 100);
-		return precoVenda;
+
+		double precoVenda = getPreco();
+		return precoVenda * ((100.0 - getDescontoDeFabrica()) / 100);
 	}
 }

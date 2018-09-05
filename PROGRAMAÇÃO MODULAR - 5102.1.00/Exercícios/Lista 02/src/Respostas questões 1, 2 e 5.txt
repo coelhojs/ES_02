@@ -1,3 +1,8 @@
 1. Alternativa D;
 2. Alternativa A;
-5. Porque não podemos controlar o garbage collector. A boa prática para liberar recursos é retirar todas as referências aquele endereço de memória.
+5. Porque nï¿½o podemos controlar o garbage collector. A boa prï¿½tica para liberar recursos ï¿½ retirar todas as referï¿½ncias aquele endereï¿½o de memï¿½ria.
+
+//CORREÃ‡ÃƒO:
+1. OK
+2 Alternativa C;
+5. OK
