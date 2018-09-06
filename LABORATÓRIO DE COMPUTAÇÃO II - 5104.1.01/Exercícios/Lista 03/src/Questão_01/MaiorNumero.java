@@ -1,7 +1,9 @@
+package Questão_01;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Ex01_MaiorNumero {
+public class MaiorNumero {
 
 	public static int maiorNumero(int n1, int n2) {
 		return n1 > n2 ? n1 : n2;

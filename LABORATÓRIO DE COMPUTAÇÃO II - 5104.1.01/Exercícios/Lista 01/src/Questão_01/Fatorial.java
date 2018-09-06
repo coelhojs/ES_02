@@ -1,4 +1,5 @@
-public class Questão01_Fatorial {
+package Questão_01;
+public class Fatorial {
 	public static int fatorial(int n) {
 		int fat;
 

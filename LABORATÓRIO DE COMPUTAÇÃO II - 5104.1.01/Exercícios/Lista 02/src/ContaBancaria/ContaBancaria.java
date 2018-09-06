@@ -1,3 +1,4 @@
+package ContaBancaria;
 public class ContaBancaria {
 	private float saldo, saldoMinimo;
 
