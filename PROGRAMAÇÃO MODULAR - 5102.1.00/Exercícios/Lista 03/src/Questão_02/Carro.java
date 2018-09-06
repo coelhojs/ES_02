@@ -4,7 +4,7 @@ public class Carro {
 	private int velocidade;
 	private double preco;
 	private String cor;
-	
+
 	public Carro(int velocidade, double preco, String cor) {
 		this.velocidade = velocidade;
 		this.preco = preco;
@@ -16,23 +16,14 @@ public class Carro {
 	}
 
 	public int getVelocidade() {
-		return velocidade;
-	}
-
-	public double getPreco() {
-		return preco;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-	
-	public void setPreco(double preco) {
-		this.preco = preco;
+		return this.velocidade;
 	}
 
 	public double getPrecoVenda() {
-		double precoVenda = getPreco() * 1.35;
-		return precoVenda;		
+		return this.preco;
+	}
+
+	public String getCor() {
+		return this.cor;
 	}
 }

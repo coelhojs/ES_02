@@ -1,0 +1,2 @@
+1. A herança rompe a barreira do encapsulamento porque a permite acessar os atributos das classes superiores.
+4. 

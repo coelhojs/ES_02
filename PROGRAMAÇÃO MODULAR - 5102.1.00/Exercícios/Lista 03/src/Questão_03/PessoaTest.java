@@ -1,6 +1,6 @@
 package Questão_03;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,13 +10,12 @@ class PessoaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		pessoa = new Pessoa("Cristiano");
+		pessoa = new Pessoa();
 	}
 
 	@Test
-	void testMaiorIdade() {
-		pessoa.getIdade();
-		assertTrue(pessoa.isMaiorIdade());
+	void testNomePadrao() {
+		assertEquals("Nome Padrão", pessoa.getNome());
 	}
 
 }
