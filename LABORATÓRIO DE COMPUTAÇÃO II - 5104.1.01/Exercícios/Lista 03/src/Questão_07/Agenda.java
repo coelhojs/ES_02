@@ -6,17 +6,25 @@ por fim, um método para excluir um contato através do nome*/
 
 package Questão_07;
 
-public class Agenda extends Contato {
-
-	public Agenda(String nome, String email) {
-		super(nome, email);
-
+public class Agenda {
+	private Contato[] contato;
+	//verificar por que o atributo contato não está sendo usado
+	
+	public Agenda(Contato[] contato) {
+		this.contato = contato;
 	}
 
 	public Agenda() {
-		super();
 	}
-	
-	
 
+	public static void main(String[] args) {
+		Contato[] contato = new Contato[10];
+
+		for (int i = 0; i < contato.length; i++) {
+			contato[i] = new Contato("Nome" + i, "email" + i + "@mail.com");
+			System.out.println("Nome: " + contato[i].getNome());
+			System.out.println("Email: " + contato[i].getEmail());
+			System.out.println();
+		}
+	}
 }
