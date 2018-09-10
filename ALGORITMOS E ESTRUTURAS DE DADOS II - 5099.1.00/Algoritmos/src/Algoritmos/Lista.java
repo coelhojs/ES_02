@@ -1,8 +1,6 @@
 package Algoritmos;
 
-public
-
-class Lista {
+public class Lista {
 	int[] array;
 	int n;
 
@@ -39,7 +37,7 @@ class Lista {
 
 	void inserir(int x, int pos) throws Exception {
 		if (n >= array.length || pos < 0 || pos > n) {
-			throw new Exception("Erro!");
+			throw new Exception("Erro! Lista cheia");
 		} else {
 			// levar elementos para o fim do array
 			for (int i = n; i > pos; i--) {
