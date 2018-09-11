@@ -1,7 +1,9 @@
 package Questão_01;
 
+import java.util.Scanner;
+
 public class EditorTexto {
-	int[] array;
+	String[] array;
 	int n;
 
 	EditorTexto() {
@@ -9,13 +11,17 @@ public class EditorTexto {
 	}
 
 	EditorTexto(int tamanho) {
-		array = new int[tamanho];
+		array = new String[tamanho];
 		n = 0;
 	}
 
-	void inserirInicio(int x) throws Exception {
+	void inserirInicio(String x) throws Exception {
 		if (n >= array.length) {
 			throw new Exception("Erro!");
+		} else if (x == "#") {
+			removerInicio();
+		} else if (x == "@") {
+			array = null;
 		} else {
 			// levar elementos para o fim do array
 			for (int i = n; i > 0; i--) {
@@ -26,11 +32,11 @@ public class EditorTexto {
 		}
 	}
 
-	int removerInicio() throws Exception {
+	String removerInicio() throws Exception {
 		if (n == 0) {
 			throw new Exception("Erro!");
 		} else {
-			int resp = array[0];
+			String resp = array[0];
 			n--;
 			for (int i = 0; i < n; i++) {
 				array[i] = array[i + 1];
@@ -46,9 +52,14 @@ public class EditorTexto {
 		}
 		System.out.println("]");
 	}
-	
+
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+		Scanner ler = new Scanner(System.in);
+		EditorTexto editor = new EditorTexto();
+		
+		while (x != "#" | x != "@") {
+			
+		}
 
 	}
 
