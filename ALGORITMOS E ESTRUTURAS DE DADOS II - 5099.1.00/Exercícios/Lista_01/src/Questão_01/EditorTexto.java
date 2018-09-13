@@ -1,6 +1,7 @@
 package Questão_01;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class EditorTexto {
 	String[] array;
@@ -45,6 +46,13 @@ public class EditorTexto {
 		}
 	}
 
+	void limpar() {
+		for (int i = 0; i < n; i++) {
+			array[i] = "";
+		}
+		n = 0;
+	}
+
 	void mostrar() {
 		System.out.print("[ ");
 		for (int i = 0; i < n; i++) {
@@ -54,13 +62,29 @@ public class EditorTexto {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Scanner ler = new Scanner(System.in);
-		EditorTexto editor = new EditorTexto();
-		
-		while (x != "#" | x != "@") {
-			
-		}
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		EditorTexto editor = new EditorTexto(50);
 
+		while (editor.n <= editor.array.length) {
+			System.out.println("Digite o caractere e pressione ENTER: ");
+			String caractere = br.readLine();
+			switch (caractere) {
+			case "#":
+				editor.removerInicio();
+				editor.mostrar();
+				System.out.println();
+				break;
+			case "@":
+				editor.limpar();
+				editor.mostrar();
+				break;
+			default:
+				editor.inserirInicio(caractere);
+				editor.mostrar();
+			}
+
+		}
+		System.out.println("Editor cheio!");
 	}
 
 }

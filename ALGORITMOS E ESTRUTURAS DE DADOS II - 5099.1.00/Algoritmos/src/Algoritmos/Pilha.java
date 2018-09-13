@@ -1,6 +1,6 @@
 package Algoritmos;
 
-//Pilha: FILO (First In, Last Out)
+//Pilha: FIFO (First In, First Out)
 //Pilhas possuem duas possibilidades: Inserção no início e remoção no início(menos eficiente) ou Inserção no final 
 //e remoção no final(mais eficiente).
 // II, RI ou IF, RF

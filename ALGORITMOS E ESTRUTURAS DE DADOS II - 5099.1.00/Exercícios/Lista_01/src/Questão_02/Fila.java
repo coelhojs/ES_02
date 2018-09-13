@@ -1,4 +1,4 @@
-package Algoritmos;
+package Questão_02;
 
 //Fila: FILO (First In, Last Out)
 //Filas possuem duas possibilidades: Inserção no início e remoção no final ou Inserção no final e remoção no Início.
@@ -45,25 +45,4 @@ public class Fila {
 		}
 		System.out.println("]");
 	}
-
-	public static void main(String[] args) throws Exception {
-		System.out.println("==== FILA ESTATICA ====");
-		Fila fila = new Fila();
-		int x1, x2, x3;
-		fila.inserirInicio(2);
-		fila.inserirInicio(3);
-		fila.inserirInicio(6);
-		fila.inserirInicio(7);
-		fila.inserirInicio(11);
-		fila.inserirInicio(0);
-		fila.mostrar();
-
-		x1 = fila.removerFim();
-		x2 = fila.removerFim();
-		x3 = fila.removerFim();
-		System.out.println(x1 + ", " + x2 + ", " + x3);
-		fila.mostrar();
-
-	}
-
 }
