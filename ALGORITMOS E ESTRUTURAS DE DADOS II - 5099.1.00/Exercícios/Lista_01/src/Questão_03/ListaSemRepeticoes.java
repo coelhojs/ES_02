@@ -28,21 +28,4 @@ public class ListaSemRepeticoes {
 		}
 		System.out.println("]");
 	}
-
-	public static void main(String[] args) {
-		ListaSemRepeticoes listasr = new ListaSemRepeticoes();
-		listasr.inserirInicio(8);
-		listasr.inserirInicio(1);
-		listasr.inserirInicio(12);
-		listasr.inserirInicio(9);
-		listasr.inserirInicio(5);
-		listasr.inserirInicio(8);
-		listasr.inserirInicio(-7);
-		listasr.inserirInicio(5);
-		listasr.inserirInicio(12);
-		System.out.println("Lista: ");
-		listasr.mostrar();
-
-	}
-
 }
