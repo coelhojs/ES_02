@@ -1,0 +1,10 @@
+package Questão_02;
+
+public class ControleRemoto {
+	Televisao tv = new Televisao();
+	
+	public static void main(String[] args) {
+		System.out.println("TELEVISAO");
+		System.out.println("Volume atual: " + tv.getVolume());
+	}
+}
