@@ -16,33 +16,24 @@ public class EditorTexto {
 		n = 0;
 	}
 
-	void inserirInicio(String x) throws Exception {
+	void inserirFim(String x) throws Exception {
 		if (n >= array.length) {
 			throw new Exception("Erro!");
 		} else if (x == "#") {
-			removerInicio();
+			removerFim();
 		} else if (x == "@") {
 			array = null;
 		} else {
-			// levar elementos para o fim do array
-			for (int i = n; i > 0; i--) {
-				array[i] = array[i - 1];
-			}
-			array[0] = x;
+			array[n] = x;
 			n++;
 		}
 	}
 
-	String removerInicio() throws Exception {
+	String removerFim() throws Exception {
 		if (n == 0) {
 			throw new Exception("Erro!");
 		} else {
-			String resp = array[0];
-			n--;
-			for (int i = 0; i < n; i++) {
-				array[i] = array[i + 1];
-			}
-			return resp;
+			return array[--n];
 		}
 	}
 
@@ -70,7 +61,7 @@ public class EditorTexto {
 			String caractere = br.readLine();
 			switch (caractere) {
 			case "#":
-				editor.removerInicio();
+				editor.removerFim();
 				editor.mostrar();
 				System.out.println();
 				break;
@@ -79,7 +70,7 @@ public class EditorTexto {
 				editor.mostrar();
 				break;
 			default:
-				editor.inserirInicio(caractere);
+				editor.inserirFim(caractere);
 				editor.mostrar();
 			}
 

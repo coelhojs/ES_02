@@ -19,11 +19,10 @@ public class PistaDecolagem {
 		if (n >= array.length) {
 			throw new Exception("Erro!");
 		} else {
-			// levar elementos para o fim do array
 			for (int i = n; i > 0; i--) {
 				array[i] = array[i - 1];
 			}
-			array[0] = x;
+			array[n] = x;
 			n++;
 		}
 	}

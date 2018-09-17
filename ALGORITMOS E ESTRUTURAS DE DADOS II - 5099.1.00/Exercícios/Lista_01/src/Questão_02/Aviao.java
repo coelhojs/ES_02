@@ -2,7 +2,7 @@ package Questão_02;
 
 public class Aviao {
 	private String nome;
-	private static int identificador = 0;
+	private int identificador = 0;
 
 	public Aviao(String nome) {
 		this.nome = nome;
