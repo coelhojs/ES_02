@@ -16,8 +16,8 @@ public class Aplicacao {
 		listain.inserirInicio(12);
 		System.out.println("Lista Inicial: ");
 		listain.mostrar();
-		System.out.println("Lista sem repetições: ");
-		listasr.mostrar();
+		//System.out.println("Lista sem repetições: ");
+		//listasr.mostrar();
 	}
 
 }

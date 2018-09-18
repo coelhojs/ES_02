@@ -2,10 +2,16 @@ package Algoritmos;
 
 public class ListaEncadeada {
 	public Celula primeiro, ultimo;
+	int[] array;
+	int n;
 
 	public ListaEncadeada() {
 		primeiro = new Celula();
 		ultimo = primeiro;
+	}
+	
+	int tamanho() {
+		return array.length;
 	}
 
 	public void inserirInicio(int x) {
@@ -18,9 +24,31 @@ public class ListaEncadeada {
 		tmp = null;
 	}
 
+	void inserirFim(int x) throws Exception {
+		if (n >= array.length) {
+			throw new Exception("Erro!");
+		} else {
+			array[n] = x;
+			n++;
+		}
+	}
+
+	int removerInicio() throws Exception {
+		if (n == 0) {
+			throw new Exception("Erro!");
+		} else {
+			int resp = array[0];
+			n--;
+			for (int i = 0; i < n; i++) {
+				array[i] = array[i + 1];
+			}
+			return resp;
+		}
+	}
+
 	public int removerFim() throws Exception {
 		if (primeiro == ultimo)
-			throw new Exception("Erro");
+			throw new Exception("Erro!");
 		Celula i;
 		for (i = primeiro; i.prox != ultimo; i = i.prox)
 			;
@@ -70,9 +98,12 @@ public class ListaEncadeada {
 		return elemento;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	void mostrar() {
+		System.out.print("[ ");
+		for (int i = 0; i < n; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println("]");
 	}
 
 }

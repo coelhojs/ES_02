@@ -42,9 +42,10 @@ public class FilaDecolagem {
 	}
 
 	void primeiroDaFila() {
-		for (int i = 0; i < n; i++) {}
-		System.out.println("Avião selecionado: " + avioes[n+1].getNome());
-		//System.out.println("Nome: " + avioes[avioes.length-1].getNome() + ", Identificador: " + avioes[avioes.length-1].getIdentificador());
+		for (int i = 0; i < n; i++) {
+		}
+		System.out.println("Primeiro avião da fila: ");
+		System.out.println("Nome: " + avioes[n - 1].getNome() + ", Identificador: " + avioes[n-1].getIdentificador());
 	}
 
 	public static void main(String[] args) throws Exception {
