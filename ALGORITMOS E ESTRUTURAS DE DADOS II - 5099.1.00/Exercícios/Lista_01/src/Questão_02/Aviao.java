@@ -2,15 +2,11 @@ package Questão_02;
 
 public class Aviao {
 	private String nome;
-	private int identificador = 0;
+	private int identificador;
 
-	public Aviao(String nome) {
+	public Aviao(String nome, int identificador) {
 		this.nome = nome;
-		this.identificador = identificador++;
-	}
-
-	public Aviao() {
-		this.identificador++;
+		this.identificador = identificador;
 	}
 
 	public String getNome() {
@@ -25,7 +21,9 @@ public class Aviao {
 		this.nome = nome;
 	}
 
-	public void setIdentificador() {
-		this.identificador = identificador++;
+	public void setIdentificador(int identificador) {
+		this.identificador = identificador;
+
 	}
+
 }

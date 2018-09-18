@@ -1,6 +1,6 @@
 package Algoritmos;
 
-//Fila: FILO (First In, Last Out)
+//Fila: FIFO (First In, First Out)
 //Filas possuem duas possibilidades: Inserção no início e remoção no final ou Inserção no final e remoção no Início.
 //Neste exemplo será abordada a solução de inserção no início e remoção no final.
 
