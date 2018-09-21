@@ -1,0 +1,33 @@
+package Aula_01a04;
+
+public class Aula02ClasseConta {
+
+	private float saldo;
+
+	private float saldoMinimo;
+
+	Aula02ClasseConta(float saldo) {
+		this.saldo = saldo;
+	}
+
+	Aula02ClasseConta(float saldo, float saldoMinimo) {
+		this.saldo = saldo;
+		this.saldoMinimo = saldo;
+	}
+
+	void depositar(float quantia) {
+		saldo += quantia;
+	}
+
+	void saque(float quantia) throws Exception {
+		if (saldo - quantia < saldoMinimo)
+			throw new Exception("Saldo insuficiente");
+
+		saldo -= quantia;
+	}
+
+	float getSaldo() {
+		return saldo;
+	}
+
+}
