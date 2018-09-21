@@ -10,6 +10,10 @@ public class ListaInicial {
 		ultimo = primeiro;
 	}
 
+	public int tamanho() {
+		return array.length;
+	}
+
 	public void inserirInicio(int x) {
 		Celula tmp = new Celula(x);
 		tmp.prox = primeiro.prox;
@@ -18,6 +22,28 @@ public class ListaInicial {
 			ultimo = tmp;
 		}
 		tmp = null;
+	}
+
+	void inserirFim(int x) throws Exception {
+		if (n >= array.length) {
+			throw new Exception("Erro!");
+		} else {
+			array[n] = x;
+			n++;
+		}
+	}
+
+	int removerInicio() throws Exception {
+		if (n == 0) {
+			throw new Exception("Erro!");
+		} else {
+			int resp = array[0];
+			n--;
+			for (int i = 0; i < n; i++) {
+				array[i] = array[i + 1];
+			}
+			return resp;
+		}
 	}
 
 	public int removerFim() throws Exception {
@@ -32,7 +58,7 @@ public class ListaInicial {
 		return elemento;
 	}
 
-	public void inserir(int x, int pos) throws Exception { // Inserir(6, 2)
+	public void inserir(int x, int pos) throws Exception {
 		int tamanho = tamanho();
 		if (pos < 0 || pos > tamanho) {
 			throw new Exception("Erro!");
@@ -51,7 +77,7 @@ public class ListaInicial {
 		}
 	}
 
-	public int remover(int pos) throws Exception { // remover(1)
+	public int remover(int pos) throws Exception {
 		int elemento, tamanho = tamanho();
 		if (primeiro == ultimo || pos < 0 || pos >= tamanho) {
 			throw new Exception("Erro!");

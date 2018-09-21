@@ -90,25 +90,25 @@ public class Lista {
 		System.out.println("]");
 	}
 
-	void intercalar(Lista lista1, Lista lista2) {
-		if (n >= array.length) {
+	void intercalar(Lista lista1, Lista lista2, Lista lista3) throws Exception {
+		int tamanhoTotal = lista1.array.length + lista2.array.length;
+		int length = array.length;
+		if (n >= tamanhoTotal) {
 			throw new Exception("Erro!");
 		} else {
-			// levar elementos para o fim do array
-			for (int i = n, j = n; j > 0 ; i--, j--) {
-				array[i] = array[i - 1];
-				array[j] = array[j - 1];
+			for (int i = tamanhoTotal; i > 0; i--) {
+				lista3.array[i - 1] = lista1.array[length-1];
+				lista3.array[i - 1] = lista2.array[length-1];
 			}
-			array[0] = x;
-			n++;
+			n += 2;
 		}
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 		System.out.println("==== LISTA 1 ====");
-		Lista lista1 = new Lista();
-		Lista lista2 = new Lista();
-		Lista lista3 = new Lista();
+		Lista lista1 = new Lista(4);
+		Lista lista2 = new Lista(4);
+		Lista lista3 = new Lista(8);
 		lista1.inserirInicio(1);
 		lista1.inserirInicio(2);
 		lista1.inserirInicio(3);
@@ -121,8 +121,8 @@ public class Lista {
 		lista2.inserirInicio(6);
 		lista2.mostrar();
 		System.out.println("==== LISTA 3 ====");
-		lista3.intercalar(lista1, lista2);
+		lista3.intercalar(lista1, lista2, lista3);
 		lista3.mostrar();
-	}	
+	}
 
 }
