@@ -35,7 +35,8 @@ class Aplicacao {
 			if (op == 1) {
 				lista.adicionar(new BemDuravel(desc, preco, quant, LocalDateTime.now(), 12));
 			} else if (op == 2) {
-				lista.adicionar(new BemDeConsumo(desc, preco, quant, LocalDateTime.now(), LocalDate.now().plusMonths(12)));
+				lista.adicionar(
+						new BemDeConsumo(desc, preco, quant, LocalDateTime.now(), LocalDate.now().plusMonths(12)));
 			}
 		}
 
@@ -49,9 +50,8 @@ class Aplicacao {
 		adicionarProduto(estoque);
 
 		estoque.adicionar(new BemDeConsumo("Leite", 4.00F, 120, LocalDateTime.now(), LocalDate.now().plusMonths(6)));
-		
-		JOptionPane.showMessageDialog(null, estoque, "Estoque de produtos",
-				JOptionPane.INFORMATION_MESSAGE);
+
+		JOptionPane.showMessageDialog(null, estoque, "Estoque de produtos", JOptionPane.INFORMATION_MESSAGE);
 
 		Produto p = estoque.consultar("lEItE");
 		p.setQuant(p.getQuant() + 200);
