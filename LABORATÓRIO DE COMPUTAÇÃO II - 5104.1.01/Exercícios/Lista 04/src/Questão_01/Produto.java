@@ -6,7 +6,7 @@ package Questão_01;
 //um relatório com o código e o novo preço. O final desse relatório deve apresentar também a
 //quantidade de produtos com quantidade estocada superior a 500.
 
-public class Produtos {
+/*public class Produtos {
 	Produtos produtos = new Produtos(6);
 	
 	
@@ -21,3 +21,4 @@ public class Produtos {
 	//elemento remover(posição)
 	//Mostrar, pesquisar, ordenar, ...
 }
+*/
