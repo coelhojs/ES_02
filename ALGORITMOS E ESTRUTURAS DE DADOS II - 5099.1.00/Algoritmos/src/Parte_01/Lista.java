@@ -1,4 +1,4 @@
-package Algoritmos;
+package Parte_01;
 
 public class Lista {
 	int[] array;

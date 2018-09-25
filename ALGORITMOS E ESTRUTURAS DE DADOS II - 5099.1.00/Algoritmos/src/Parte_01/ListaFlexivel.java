@@ -1,17 +1,11 @@
-package Algoritmos;
+package Parte_01;
 
-public class ListaEncadeada {
+public class ListaFlexivel {
 	public Celula primeiro, ultimo;
-	int[] array;
-	int n;
 
-	public ListaEncadeada() {
-		primeiro = new Celula();
-		ultimo = primeiro;
-	}
-	
-	int tamanho() {
-		return array.length;
+	public ListaFlexivel() {
+		this.primeiro = new Celula();
+		this.ultimo = primeiro;
 	}
 
 	public void inserirInicio(int x) {
@@ -22,28 +16,6 @@ public class ListaEncadeada {
 			ultimo = tmp;
 		}
 		tmp = null;
-	}
-
-	void inserirFim(int x) throws Exception {
-		if (n >= array.length) {
-			throw new Exception("Erro!");
-		} else {
-			array[n] = x;
-			n++;
-		}
-	}
-
-	int removerInicio() throws Exception {
-		if (n == 0) {
-			throw new Exception("Erro!");
-		} else {
-			int resp = array[0];
-			n--;
-			for (int i = 0; i < n; i++) {
-				array[i] = array[i + 1];
-			}
-			return resp;
-		}
 	}
 
 	public int removerFim() throws Exception {
@@ -58,7 +30,7 @@ public class ListaEncadeada {
 		return elemento;
 	}
 
-	public void inserir(int x, int pos) throws Exception { // Inserir(6, 2)
+	public void inserir(int x, int pos) throws Exception {
 		int tamanho = tamanho();
 		if (pos < 0 || pos > tamanho) {
 			throw new Exception("Erro!");
@@ -98,12 +70,9 @@ public class ListaEncadeada {
 		return elemento;
 	}
 
-	void mostrar() {
-		System.out.print("[ ");
-		for (int i = 0; i < n; i++) {
-			System.out.print(array[i] + " ");
-		}
-		System.out.println("]");
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+
 	}
 
 }

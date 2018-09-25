@@ -1,4 +1,4 @@
-package Algoritmos;
+package Parte_01;
 
 public class FilaFlexivel {
 	public Celula primeiro, ultimo;

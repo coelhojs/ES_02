@@ -1,4 +1,4 @@
-package Algoritmos;
+package Parte_01;
 
 //Fila: FIFO (First In, First Out)
 //Filas possuem duas possibilidades: Inserção no início e remoção no final ou Inserção no final e remoção no Início.

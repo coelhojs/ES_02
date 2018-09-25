@@ -1,14 +1,14 @@
 package Questão_03;
 
 public class Cliente {
-	private PessoaFisica clientePF;
-	private PessoaJuridica clientePJ;
-	
-	public Cliente(PessoaFisica clientePF) {
-		clientePF = new PessoaFisica();
+	private Pessoa[] cliente;
+
+	public Cliente(PessoaFisica cliente) {
+		this.cliente = new PessoaFisica();
 	}
-	
-	public Cliente(PessoaJuridica clientePJ) {
-		clientePJ = new PessoaJuridica();
+
+	public Cliente(PessoaJuridica cliente) {
+		this.cliente = new PessoaJuridica();
 	}
+
 }
