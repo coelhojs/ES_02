@@ -48,7 +48,7 @@ public class Estoque {
 				// remove produto
 				for (int i = pos + 1; i < numBensDuraveis; i++)
 					listaDeBensDuraveis[i - 1] = listaDeBensDuraveis[i];
-				listaDeBensDuraveis[numBensDuraveis-1] = null;
+				listaDeBensDuraveis[numBensDuraveis - 1] = null;
 				numBensDuraveis--;
 			}
 		}
@@ -57,7 +57,7 @@ public class Estoque {
 				// remove produto
 				for (int i = pos + 1; i < numBensDeConsumo; i++)
 					listaDeBensDeConsumo[i - 1] = listaDeBensDeConsumo[i];
-				listaDeBensDeConsumo[numBensDeConsumo-1] = null;
+				listaDeBensDeConsumo[numBensDeConsumo - 1] = null;
 				numBensDeConsumo--;
 			}
 		}
@@ -85,14 +85,15 @@ public class Estoque {
 		StringBuilder valor = new StringBuilder();
 		for (int i = 0; i < numBensDuraveis; i++)
 			valor.append("Produdo: " + listaDeBensDuraveis[i].getId() + " - " + listaDeBensDuraveis[i].getDescricao()
-					+ "   Preço: R$" + listaDeBensDuraveis[i].getPreco() + "   Quant.: " + listaDeBensDuraveis[i].getQuant()
-					+ "   Fabricação: " + listaDeBensDuraveis[i].getDataFabricacao()
+					+ "   Preço: R$" + listaDeBensDuraveis[i].getPreco() + "   Quant.: "
+					+ listaDeBensDuraveis[i].getQuant() + "   Fabricação: " + listaDeBensDuraveis[i].getDataFabricacao()
 					+ "   Garantia: " + listaDeBensDuraveis[i].getMesesGarantia() + "\n");
 		for (int i = 0; i < numBensDeConsumo; i++)
 			valor.append("Produdo: " + listaDeBensDeConsumo[i].getId() + " - " + listaDeBensDeConsumo[i].getDescricao()
-					+ "   Preço: R$" + listaDeBensDeConsumo[i].getPreco() + "   Quant.: " + listaDeBensDeConsumo[i].getQuant()
-					+ "   Fabricação: " + listaDeBensDeConsumo[i].getDataFabricacao()
-					+ "   Validade: " + listaDeBensDeConsumo[i].getDataValidade() + "\n");
+					+ "   Preço: R$" + listaDeBensDeConsumo[i].getPreco() + "   Quant.: "
+					+ listaDeBensDeConsumo[i].getQuant() + "   Fabricação: "
+					+ listaDeBensDeConsumo[i].getDataFabricacao() + "   Validade: "
+					+ listaDeBensDeConsumo[i].getDataValidade() + "\n");
 		return valor.toString();
 	}
 

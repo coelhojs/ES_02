@@ -1,14 +1,14 @@
 package Questão_03;
 
 public class Cliente {
-	private Pessoa[] cliente;
+	private static final int MAX_CLIENTES = 100;
+	private PessoaFisica[] clientePF;
+	private PessoaJuridica[] clientePJ;
+	private int numClientesPJ, numClientesPF;
 
-	public Cliente(PessoaFisica cliente) {
-		this.cliente = new PessoaFisica();
+	public Cliente(Pessoa cliente) {
+		clientePF = new PessoaFisica[MAX_CLIENTES];
+		clientePJ = new PessoaJuridica[MAX_CLIENTES];
+		
 	}
-
-	public Cliente(PessoaJuridica cliente) {
-		this.cliente = new PessoaJuridica();
-	}
-
 }
