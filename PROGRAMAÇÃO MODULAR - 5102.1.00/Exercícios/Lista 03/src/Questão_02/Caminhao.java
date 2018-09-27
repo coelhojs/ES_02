@@ -1,4 +1,4 @@
-/package Questão_02;
+package Questão_02;
 
 public class Caminhao extends Carro {
 	private int carga;
