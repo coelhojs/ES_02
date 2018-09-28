@@ -5,9 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
-import javax.swing.JOptionPane;
-
 public class Catalogo {
+
 	public void abrirCatalogo() throws Exception {
 		File file = new File("Series.txt");
 
@@ -17,12 +16,24 @@ public class Catalogo {
 
 		while (linha != null) {
 			linha = br.readLine();
+		
 			String campos[] = linha.split(";");
 			System.out.println(campos[0]);
-//			JOptionPane.showMessageDialog(null,  campos[0]);
 		}
-
 		br.close();
+
+
+	}
+
+	public void pesquisarSerie() throws Exception {
+
+	}
+
+	public void listaFavoritos() throws Exception {
+
+	}
+
+	public void sugestaoSerie() throws Exception {
 
 	}
 

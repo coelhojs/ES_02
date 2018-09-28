@@ -108,4 +108,86 @@ public class ArvoreBinaria {
 			System.out.print(i.elemento + " ");
 		}
 	}
+
+	// códigos dados em aula
+
+	public int contarFolhas() {
+		return contarFolhas(raiz);
+	}
+
+	private int contarFolhas(No i) {
+		int cont = 0;
+		if (i != null) {
+			if (i.esq == null && i.dir == null) {
+				cont++;
+			}
+			cont += contarFolhas(i.esq);
+			cont += contarFolhas(i.dir);
+		}
+		return cont;
+	}
+
+	public int contarNosPreenchidos() {
+		return contarNosPreenchidos(raiz);
+	}
+
+	private int contarNosPreenchidos(No i) {
+		int cont = 0;
+		if (i != null) {
+			if (i.esq != null && i.dir != null) {
+				cont++;
+			}
+			cont += contarNosPreenchidos(i.esq);
+			cont += contarNosPreenchidos(i.dir);
+		}
+		return cont;
+	}
+
+	public int contPares() {
+		return contPares(raiz);
+	}
+
+	private int contPares(No i) {
+		int cont = 0;
+		if (i != null) {
+			// Par?
+			if (i.elemento % 2 == 0) {
+				cont++;
+			}
+			cont += contPares(i.esq);
+			cont += contPares(i.dir);
+		}
+		return cont;
+	}
+
+	public int alturaArvore() {
+		return alturaArvore(raiz);
+	}
+
+	private int alturaArvore(No i) {
+		int alturaEsq = 0, alturaDir = 0;
+		if (i.esq == null && i.dir == null) {
+			return 0;
+		} else if (i != null) {
+			alturaEsq = alturaArvore(i.esq);
+			alturaDir = alturaArvore(i.dir);
+		}
+		return (alturaEsq >= alturaDir) ? alturaEsq + 1 : alturaDir + 1;
+	}
+
+	public static void main(String[] args) throws Exception {
+		ArvoreBinaria arvore = new ArvoreBinaria();
+		arvore.inserir(15);
+		arvore.inserir(20);
+		arvore.inserir(7);
+		
+		
+
+		System.out.println("Mostrar Central:");
+		arvore.mostrarCentral();
+		System.out.println();
+		System.out.println("Folhas:" + arvore.contarFolhas());
+		System.out.println("Nós com 2 filhos:" + arvore.contarNosPreenchidos());
+		System.out.println("Altura da arvore: " + arvore.alturaArvore());
+	}
 }
