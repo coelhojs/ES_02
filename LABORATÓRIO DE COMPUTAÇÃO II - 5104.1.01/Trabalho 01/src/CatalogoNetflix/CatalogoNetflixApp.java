@@ -6,7 +6,9 @@ public class CatalogoNetflixApp {
 
 	public static void main(String[] args) throws Exception {
 		Catalogo catalogo = new Catalogo();
-
+		
+		catalogo.inicializarCatalogo();
+		
 		Object[] options = { "Abrir o catálogo", "Pesquisar série", "Lista de favoritas",
 				"Pedir uma sugestão de série" };
 		int opcao = JOptionPane.showOptionDialog(null, "Selecione a opção abaixo", "Bem vindo ao Catálogo Netflix",

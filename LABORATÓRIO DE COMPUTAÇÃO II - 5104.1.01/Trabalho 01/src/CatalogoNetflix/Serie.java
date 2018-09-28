@@ -17,6 +17,9 @@ public class Serie {
 		this.numEpisodios = numEpisodios;
 	}
 
+	public Serie() {
+	};
+
 	public String getNome() {
 		return nome;
 	}
