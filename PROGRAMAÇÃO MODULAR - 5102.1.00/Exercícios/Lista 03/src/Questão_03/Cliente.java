@@ -1,13 +1,10 @@
 package Questão_03;
 
-public class Cliente {
+public class Cliente extends Pessoa {
 	private String nome;
 	private double limiteCredito;
 	private PessoaFisica pf;
 	private PessoaJuridica pj;
-
-	public Cliente() {
-	}
 
 	public Cliente(PessoaFisica pf, double limiteCredito) {
 		this.nome = pf.getNome();
@@ -21,12 +18,10 @@ public class Cliente {
 		this.pj = pj;
 	}
 
+	public Cliente() {
+	}
+
 	public double getLimiteCredito() {
 		return limiteCredito;
 	}
-
-	public void setLimiteCredito(double limiteCredito) {
-		this.limiteCredito = limiteCredito;
-	}
-
 }
