@@ -58,7 +58,14 @@ public class Aplicação {
 
 	public static void main(String[] args) {
 		Empresa pessoa = new Empresa();
-
+		/*
+		 * Object[] options = { "", "Pesquisar série", "Lista de favoritas",
+		 * "Pedir uma sugestão de série", "Sair" }; int opcao =
+		 * JOptionPane.showOptionDialog(null, "Selecione a opção abaixo",
+		 * "Bem vindo ao Catálogo Netflix", JOptionPane.DEFAULT_OPTION,
+		 * JOptionPane.INFORMATION_MESSAGE, null, options, options[0]); while (opcao !=
+		 * 4) { switch (opcao) { } }
+		 */
 		adicionarPessoa(pessoa);
 	}
 }
