@@ -12,6 +12,7 @@ public class Empresa {
 			clientes[numPessoas] = cliente;
 			numPessoas++;
 		}
+
 	}
 
 	public void adicionarFuncionario(Funcionario funcionario) {
@@ -20,13 +21,20 @@ public class Empresa {
 		}
 	}
 
-	public String exibirPessoa() {
+	public String exibirPessoas() {
 		StringBuilder valor = new StringBuilder();
-		for (int i = 0; i < numPessoas; i++)
-			valor.append("Cliente: " + clientes[i].getNome() + " Idade: " + clientes[i].getEndereco() + "\n");
-		for (int i = 0; i < numPessoas; i++)
-			valor.append(
-					"Funcionario: " + funcionarios[i].getNome() + " Idade: " + funcionarios[i].getEndereco() + "\n");
+		if (clientes[0] != null) {
+			for (int i = 0; i < numPessoas; i++)
+				valor.append("Cliente: " + clientes[i].getNome() + " CPF: " + clientes[i].getCpf() + " Endereço: "
+						+ clientes[i].getEndereco() + " Telefone: " + clientes[i].getTelefone() + " Idade: "
+						+ clientes[i].getIdade() + " Sexo: " + clientes[i].getSexo() + " Limite de crédito: "
+						+ clientes[i].getLimiteCredito() + "\n");
+		}
+		if (funcionarios[0] != null) {
+			for (int i = 0; i < numPessoas; i++)
+				valor.append("Funcionario: " + funcionarios[i].getNome() + " Idade: " + funcionarios[i].getEndereco()
+						+ "\n");
+		}
 		return valor.toString();
 	}
 
