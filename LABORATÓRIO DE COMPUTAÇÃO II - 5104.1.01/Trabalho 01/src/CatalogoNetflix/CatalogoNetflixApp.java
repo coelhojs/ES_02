@@ -20,7 +20,8 @@ public class CatalogoNetflixApp {
 						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 				break;
 			case 1:
-				catalogo.pesquisarSerie();
+				opcao = JOptionPane.showOptionDialog(null, catalogo.pesquisarSerie(), "Catálogo de séries",
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 				break;
 			case 2:
 				catalogo.listaFavoritos();
@@ -29,6 +30,7 @@ public class CatalogoNetflixApp {
 				catalogo.sugestaoSerie();
 				break;
 			default:
+
 				break;
 			}
 		}

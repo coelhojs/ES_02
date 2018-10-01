@@ -5,13 +5,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
+import javax.swing.JOptionPane;
+
 public class Catalogo {
 	int i = 0;
-	int temporadas;
 	Serie[] series;
+	StringBuilder texto;
+	String resultado, serie;
 
 	public void inicializarCatalogo() throws Exception {
-		series = new Serie[100];
+		series = new Serie[61];
 		i = 0;
 		File file = new File("Series.txt");
 
@@ -19,7 +22,7 @@ public class Catalogo {
 		String linha = null;
 		linha = br.readLine();
 
-		while (i < 60) {
+		while (i < series.length) {
 			String campos[] = linha.split(";");
 
 			series[i] = new Serie();
@@ -41,20 +44,33 @@ public class Catalogo {
 	}
 
 	public String abrirCatalogo() throws Exception {
-		StringBuilder nomes = new StringBuilder();
+		texto = new StringBuilder();
 
-		for (i = 1; i < 60; i++) {
-			nomes.append(series[i].getNome() + ", " + series[i].getNumTemporadas() + " temporadas");
-			nomes.append("        ");
+		for (i = 1; i < series.length; i++) {
+			texto.append(series[i].getNome() + ", " + series[i].getNumTemporadas() + " temporadas");
+			texto.append("        ");
 			if (i % 4 == 0) {
-				nomes.append("\n\n");
+				texto.append("\n\n");
 			}
 		}
-		return nomes.toString();
+		return texto.toString();
 	}
 
-	public void pesquisarSerie() throws Exception {
+	public String pesquisarSerie() throws Exception {
+		texto = new StringBuilder();
 
+		serie = JOptionPane.showInputDialog(null, "Informe o nome da Série:", "Pesquisa de série",
+				JOptionPane.OK_CANCEL_OPTION);
+		for (i = 1; i < series.length; i++) {
+			if (serie.equalsIgnoreCase(series[i].getNome())) {
+				texto.append(series[i].getNome() + ", " + series[i].getTipo() + ", duração: " + series[i].getDuracao()
+						+ ", País: " + series[i].getPais() + ", Idioma: " + series[i].getIdioma() + ", Emissora: "
+						+ series[i].getEmissora() + ", Transmissão: " + series[i].getTransmissao() + ", Temporadas: "
+						+ series[i].getNumTemporadas() + ", Episódios: " + series[i].getNumEpisodios());
+				resultado = texto.toString();
+			}
+		}
+		return resultado;
 	}
 
 	public void listaFavoritos() throws Exception {

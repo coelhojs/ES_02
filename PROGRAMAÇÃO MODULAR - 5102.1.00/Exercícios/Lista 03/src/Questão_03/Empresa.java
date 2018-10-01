@@ -21,20 +21,21 @@ public class Empresa {
 		}
 	}
 
-	public String exibirPessoas() {
+	public String exibirClientes() {
 		StringBuilder valor = new StringBuilder();
-		if (clientes[0] != null) {
-			for (int i = 0; i < numPessoas; i++)
-				valor.append("Cliente: " + clientes[i].getNome() + " CPF: " + clientes[i].getCpf() + " Endereço: "
-						+ clientes[i].getEndereco() + " Telefone: " + clientes[i].getTelefone() + " Idade: "
-						+ clientes[i].getIdade() + " Sexo: " + clientes[i].getSexo() + " Limite de crédito: "
-						+ clientes[i].getLimiteCredito() + "\n");
-		}
-		if (funcionarios[0] != null) {
-			for (int i = 0; i < numPessoas; i++)
-				valor.append("Funcionario: " + funcionarios[i].getNome() + " Idade: " + funcionarios[i].getEndereco()
-						+ "\n");
-		}
+		for (int i = 0; i < numPessoas; i++)
+			valor.append("Cliente: " + clientes[i].getNome() + " CPF: " + clientes[i].getCpf() + " Endereço: "
+					+ clientes[i].getEndereco() + " Telefone: " + clientes[i].getTelefone() + " Idade: "
+					+ clientes[i].getIdade() + " Sexo: " + clientes[i].getSexo() + " Limite de crédito: "
+					+ clientes[i].getLimiteCredito() + "\n");
+		return valor.toString();
+	}
+
+	public String exibirFuncionarios() {
+		StringBuilder valor = new StringBuilder();
+		for (int i = 0; i < numPessoas; i++)
+			valor.append(
+					"Funcionario: " + funcionarios[i].getNome() + " Idade: " + funcionarios[i].getEndereco() + "\n");
 		return valor.toString();
 	}
 

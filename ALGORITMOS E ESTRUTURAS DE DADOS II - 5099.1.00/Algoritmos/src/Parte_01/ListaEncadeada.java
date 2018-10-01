@@ -9,7 +9,7 @@ public class ListaEncadeada {
 		primeiro = new Celula();
 		ultimo = primeiro;
 	}
-	
+
 	int tamanho() {
 		return array.length;
 	}

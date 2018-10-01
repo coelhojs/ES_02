@@ -7,6 +7,8 @@ public class Aplicação {
 	public static void adicionarPessoa(Empresa pessoa) {
 		PessoaFisica pf;
 		PessoaJuridica pj;
+		Cliente cliente;
+		Funcionario funcionario;
 
 		String nome, endereco, sexo, cargo;
 		int telefone, idade;
@@ -20,27 +22,27 @@ public class Aplicação {
 		case 0:
 			// Cliente cliente = new Cliente(pj, limiteCredito);
 			pf = new PessoaFisica("Nome do cliente", "endereço", 985877928, 11254085610L, 24, "masculino");
-			Cliente cliente = new Cliente(pf, 500);
+			cliente = new Cliente(pf, 500);
 			pessoa.adicionarCliente(cliente);
-			/*
-			 * nome = JOptionPane.showInputDialog(null, "Informe o nome:", "Cadastro",
-			 * JOptionPane.OK_CANCEL_OPTION); endereco = JOptionPane.showInputDialog(null,
-			 * "Informe o endereço:", "Cadastro", JOptionPane.OK_CANCEL_OPTION); telefone =
-			 * Integer.parseInt( JOptionPane.showInputDialog(null, "Informe o telefone:",
-			 * "Cadastro", JOptionPane.OK_CANCEL_OPTION)); cpf = Long.parseLong(
-			 * JOptionPane.showInputDialog(null, "Informe o CPF:", "Cadastro",
-			 * JOptionPane.OK_CANCEL_OPTION)); idade = Integer.parseInt(
-			 * JOptionPane.showInputDialog(null, "Informe a idade:", "Cadastro",
-			 * JOptionPane.OK_CANCEL_OPTION)); sexo = JOptionPane.showInputDialog(null,
-			 * "Informe o sexo:", "Cadastro", JOptionPane.OK_CANCEL_OPTION); limiteCredito =
-			 * Double.parseDouble(JOptionPane.showInputDialog(null,
-			 * "Informe o limite de crédito:", "Cadastro", JOptionPane.OK_CANCEL_OPTION));
-			 * pf = new PessoaFisica(nome, endereco, telefone, cpf, idade, sexo);
-			 * pessoa.adicionarCliente(new Cliente(pf, limiteCredito));
-			 */
+
+			nome = JOptionPane.showInputDialog(null, "Informe o nome:", "Cadastro", JOptionPane.OK_CANCEL_OPTION);
+			endereco = JOptionPane.showInputDialog(null, "Informe o endereço:", "Cadastro",
+					JOptionPane.OK_CANCEL_OPTION);
+			telefone = Integer.parseInt(
+					JOptionPane.showInputDialog(null, "Informe o telefone:", "Cadastro", JOptionPane.OK_CANCEL_OPTION));
+			cpf = Long.parseLong(
+					JOptionPane.showInputDialog(null, "Informe o CPF:", "Cadastro", JOptionPane.OK_CANCEL_OPTION));
+			idade = Integer.parseInt(
+					JOptionPane.showInputDialog(null, "Informe a idade:", "Cadastro", JOptionPane.OK_CANCEL_OPTION));
+			sexo = JOptionPane.showInputDialog(null, "Informe o sexo:", "Cadastro", JOptionPane.OK_CANCEL_OPTION);
+			limiteCredito = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o limite de crédito:",
+					"Cadastro", JOptionPane.OK_CANCEL_OPTION));
+			pf = new PessoaFisica(nome, endereco, telefone, cpf, idade, sexo);
+			pessoa.adicionarCliente(new Cliente(pf, limiteCredito));
+
 			break;
 		case 1:
-			/*nome = JOptionPane.showInputDialog(null, "Informe o nome:", "Cadastro", JOptionPane.OK_CANCEL_OPTION);
+			nome = JOptionPane.showInputDialog(null, "Informe o nome:", "Cadastro", JOptionPane.OK_CANCEL_OPTION);
 			endereco = JOptionPane.showInputDialog(null, "Informe o endereço:", "Cadastro",
 					JOptionPane.OK_CANCEL_OPTION);
 			telefone = Integer.parseInt(
@@ -50,9 +52,9 @@ public class Aplicação {
 			limiteCredito = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o limite de crédito:",
 					"Cadastro", JOptionPane.OK_CANCEL_OPTION));
 			pj = new PessoaJuridica(nome, endereco, telefone, cnpj);
-			pessoa.adicionarCliente(new Cliente(pj, limiteCredito));*/
-			pj = new PessoaJuridica("Nome do cliente", "endereço", 985877928, 11254085610L, "masculino");
-			Cliente cliente = new Cliente(pf, 500);
+			pessoa.adicionarCliente(new Cliente(pj, limiteCredito));
+			pj = new PessoaJuridica(nome, endereco, telefone, cnpj);
+			cliente = new Cliente(pj, limiteCredito);
 			pessoa.adicionarCliente(cliente);
 			break;
 		case 2:
@@ -70,24 +72,33 @@ public class Aplicação {
 			salario = Double.parseDouble(
 					JOptionPane.showInputDialog(null, "Informe o salario:", "Cadastro", JOptionPane.OK_CANCEL_OPTION));
 			pf = new PessoaFisica(nome, endereco, telefone, cpf, idade, sexo);
-			pessoa.adicionarFuncionario(new Funcionario(pf, cargo, salario));
+			funcionario = new Funcionario(pf, cargo, salario);
+			pessoa.adicionarFuncionario(funcionario);
 			break;
 		}
 	}
 
 	public static void main(String[] args) {
 		Empresa pessoa = new Empresa();
-		/*
-		 * Object[] options = { "", "Pesquisar série", "Lista de favoritas",
-		 * "Pedir uma sugestão de série", "Sair" }; int opcao =
-		 * JOptionPane.showOptionDialog(null, "Selecione a opção abaixo",
-		 * "Bem vindo ao Catálogo Netflix", JOptionPane.DEFAULT_OPTION,
-		 * JOptionPane.INFORMATION_MESSAGE, null, options, options[0]); while (opcao !=
-		 * 4) { switch (opcao) { } }
-		 */
-		adicionarPessoa(pessoa);
-		//pessoa.exibirPessoa();
-		JOptionPane.showMessageDialog(null, pessoa.exibirPessoas(), "Estoque de produtos", JOptionPane.INFORMATION_MESSAGE);
-		//System.out.println(pessoa.exibirPessoa());
+
+		Object[] options = { "Cadastrar uma Pessoa", "Exibir Clientes", "Exibir Funcionários", "Sair" };
+		int opcao = JOptionPane.showOptionDialog(null, "Selecione a opção abaixo", "Bem vindo ao Catálogo Netflix",
+				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+		while (opcao != 4) {
+			switch (opcao) {
+			case 1:
+				adicionarPessoa(pessoa);
+				break;
+			case 2:
+				JOptionPane.showMessageDialog(null, pessoa.exibirClientes(), "Clientes cadastrados",
+						JOptionPane.INFORMATION_MESSAGE);
+				break;
+			case 3:
+				JOptionPane.showMessageDialog(null, pessoa.exibirFuncionarios(), "Funcionarios cadastrados",
+						JOptionPane.INFORMATION_MESSAGE);
+				break;
+			}
+		}
+
 	}
 }
