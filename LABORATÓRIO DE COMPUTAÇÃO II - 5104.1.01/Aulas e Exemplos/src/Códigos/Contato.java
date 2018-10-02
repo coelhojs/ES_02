@@ -1,4 +1,4 @@
-package Exemplos;
+package Códigos;
 
 public class Contato {
 	String nome;

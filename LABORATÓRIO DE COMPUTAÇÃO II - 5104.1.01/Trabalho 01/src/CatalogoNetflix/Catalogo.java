@@ -8,13 +8,14 @@ import java.io.InputStreamReader;
 import javax.swing.JOptionPane;
 
 public class Catalogo {
-	int i = 0, opcao;
-	Serie[] series;
+	int i = 0, match, opcao;
+	Serie[] series, favoritos;
 	StringBuilder texto;
 	String resultado, serie;
 
 	public void inicializarCatalogo() throws Exception {
 		series = new Serie[61];
+		favoritos = new Serie[61];
 		i = 0;
 		File file = new File("Series.txt");
 
@@ -27,6 +28,7 @@ public class Catalogo {
 
 			series[i] = new Serie();
 
+			series[i].setId(i);
 			series[i].setNome(campos[0]);
 			series[i].setTipo(campos[1]);
 			series[i].setDuracao(campos[2]);
@@ -44,19 +46,24 @@ public class Catalogo {
 	}
 
 	public void menu() throws Exception {
-		Object[] options = { "Abrir o catálogo", "Pesquisar série", "Lista de favoritas", "Pedir uma sugestão de série",
-				"Sair" };
+		Object[] opcoesIniciais = { "Abrir o catálogo", "Pesquisar série", "Lista de favoritas",
+				"Pedir uma sugestão de série", "Sair" };
+
+		Object[] opcoesPesquisa = { "Adicionar série aos favoritos", "Voltar ao menu anterior" };
+
 		int opcao = JOptionPane.showOptionDialog(null, "Selecione a opção abaixo", "Bem vindo ao Catálogo Netflix",
-				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesIniciais, opcoesIniciais[0]);
 		while (opcao != 4) {
 			switch (opcao) {
 			case 0:
 				opcao = JOptionPane.showOptionDialog(null, abrirCatalogo(), "Catálogo de séries",
-						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesIniciais,
+						opcoesIniciais[0]);
 				break;
 			case 1:
 				opcao = JOptionPane.showOptionDialog(null, pesquisarSerie(), "Catálogo de séries",
-						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesPesquisa,
+						opcoesPesquisa[0]);
 				break;
 			case 2:
 				listaFavoritos();
@@ -80,6 +87,7 @@ public class Catalogo {
 			if (i % 4 == 0) {
 				texto.append("\n\n");
 			}
+			System.out.println(series[i].getId());
 		}
 		return texto.toString();
 	}
@@ -90,21 +98,35 @@ public class Catalogo {
 
 		serie = JOptionPane.showInputDialog(null, "Informe o nome da Série:", "Pesquisa de série",
 				JOptionPane.OK_CANCEL_OPTION);
-		if (opcao == JOptionPane.OK_OPTION) {
-			for (i = 1; i < series.length; i++) {
-				if (serie.equalsIgnoreCase(series[i].getNome())) {
-					texto.append(series[i].getNome() + ", " + series[i].getTipo() + ", duração: "
-							+ series[i].getDuracao() + ", País: " + series[i].getPais() + ", Idioma: "
-							+ series[i].getIdioma() + ", Emissora: " + series[i].getEmissora() + ", Transmissão: "
-							+ series[i].getTransmissao() + ", Temporadas: " + series[i].getNumTemporadas()
-							+ ", Episódios: " + series[i].getNumEpisodios());
-					resultado = texto.toString();
-				}
+
+		for (i = 1; i < series.length; i++) {
+			if (serie.equalsIgnoreCase(series[i].getNome())) {
+				match = i;
+				texto.append(series[i].getNome() + ", " + series[i].getTipo() + ", duração: " + series[i].getDuracao()
+						+ ", País: " + series[i].getPais() + ", Idioma: " + series[i].getIdioma() + ", Emissora: "
+						+ series[i].getEmissora() + ", Transmissão: " + series[i].getTransmissao() + ", Temporadas: "
+						+ series[i].getNumTemporadas() + ", Episódios: " + series[i].getNumEpisodios());
+				resultado = texto.toString();
 			}
-		} else {
-			menu();
+		}
+		if (!serie.equalsIgnoreCase(series[match].getNome())) {
+			resultado = "Verifique no catálogo o nome digitado.";
 		}
 		return resultado;
+	}
+
+	public void adicionarFavorito(Serie serie) throws Exception {
+		for (i = 0; i < favoritos.length; i++) {
+			if (favoritos[i] == null) {
+				favoritos[i] = series[i];
+			} else {
+				throw new Exception("Erro! Lista cheia");
+			}
+		}
+	}
+
+	public void removerFavoritos() throws Exception {
+
 	}
 
 	public void listaFavoritos() throws Exception {

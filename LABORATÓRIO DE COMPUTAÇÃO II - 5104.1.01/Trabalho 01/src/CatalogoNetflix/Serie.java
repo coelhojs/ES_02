@@ -1,10 +1,12 @@
 package CatalogoNetflix;
 
 public class Serie {
+	private int id = 0;
 	private String nome, tipo, duracao, pais, idioma, emissora, transmissao, numTemporadas, numEpisodios;
 
 	public Serie(String nome, String tipo, String duracao, String pais, String idioma, String emissora,
 			String transmissao, String numTemporadas, String numEpisodios) {
+		this.id = id++;
 		this.nome = nome;
 		this.tipo = tipo;
 		this.duracao = duracao;
@@ -18,6 +20,10 @@ public class Serie {
 
 	public Serie() {
 	};
+
+	public int getId() {
+		return id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -53,6 +59,10 @@ public class Serie {
 
 	public String getNumEpisodios() {
 		return numEpisodios;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setNome(String nome) {

@@ -1,4 +1,4 @@
-package Exemplos;
+package Códigos;
 
 public class Fila {
 	Celula primeiro, ultimo;
@@ -29,6 +29,6 @@ public class Fila {
 	}
 
 	boolean isVazia() {
-		return n == 0; //primeiro == ultimo;
+		return n == 0; // primeiro == ultimo;
 	}
 }
