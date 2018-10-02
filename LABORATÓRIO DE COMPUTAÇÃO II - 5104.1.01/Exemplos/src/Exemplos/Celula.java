@@ -1,4 +1,4 @@
-package Aula_05;
+package Exemplos;
 
 public class Celula {
 	public int elemento;
@@ -12,4 +12,5 @@ public class Celula {
 		this.elemento = elemento;
 		this.prox = null;
 	}
+
 }

@@ -1,26 +1,29 @@
-package Aula_05;
+package Exemplos;
 
 public class Pilha {
-	Fila f1 = new Fila();
-	Fila f2 = new Fila();
+	Fila f1, f2;
+
+	Pilha() {
+		f1 = new Fila();
+		f2 = new Fila();
+	}
 
 	void empilhar(int x) throws Exception {
-		while (!f1.isVazia()) {
+		while (!f1.isVazia())
 			f2.enfileirar(f1.desenfileirar());
 
-		}
 		f1.enfileirar(x);
 
-		while (!f2.isVazia()) {
+		while (!f2.isVazia())
 			f1.enfileirar(f2.desenfileirar());
-		}
 	}
 
 	int desempilhar() throws Exception {
 		return f1.desenfileirar();
 	}
-
-	boolean isVazia() {
+	
+	boolean isVazia(){
 		return f1.isVazia();
 	}
+
 }

@@ -1,4 +1,3 @@
-package Aula_01a04;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package Aula_05;
+package Exemplos;
 
 public class Fila {
 	Celula primeiro, ultimo;
@@ -8,7 +8,6 @@ public class Fila {
 		primeiro = new Celula();
 		ultimo = primeiro;
 		n = 0;
-
 	}
 
 	void enfileirar(int x) {
@@ -18,18 +17,18 @@ public class Fila {
 	}
 
 	int desenfileirar() throws Exception {
-		if (primeiro == ultimo) {
-			throw new Exception("Fila vazia.");
-		}
+		if (primeiro == ultimo)
+			throw new Exception("Fila Vazia..");
 		Celula temp = primeiro;
 		primeiro = primeiro.prox;
 		int elemento = primeiro.elemento;
 		temp.prox = null;
+		temp = null;
 		n--;
 		return elemento;
 	}
 
 	boolean isVazia() {
-		return primeiro == ultimo;
+		return n == 0; //primeiro == ultimo;
 	}
 }

@@ -8,19 +8,20 @@ import java.io.InputStreamReader;
 public class Aula04Arquivos {
 
 	public static void main(String[] args) throws Exception {
-
+		
 		File file = new File("src/Series.txt");
 
-		BufferedReader bufRdr = new BufferedReader(new InputStreamReader(new FileInputStream(file), "ISO-8859-1"));
+		BufferedReader bufRdr  = new BufferedReader(
+		    new InputStreamReader(new FileInputStream(file),"ISO-8859-1"));
 		String linha = null;
-		linha = bufRdr.readLine();
+		linha = bufRdr.readLine(); 
 
 		while (linha != null) {
 			linha = bufRdr.readLine();
-			String campos[] = linha.split(";");
-			System.out.println(campos[0]);
+			String campos [] = linha.split(";");
+			System.out.println(campos[0]); 
 		}
-
+		
 		bufRdr.close();
 
 	}

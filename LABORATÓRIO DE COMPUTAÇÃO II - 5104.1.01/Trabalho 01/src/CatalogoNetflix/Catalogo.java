@@ -84,6 +84,7 @@ public class Catalogo {
 		return texto.toString();
 	}
 
+	// quando clico no cancel, dá erro de exception
 	public String pesquisarSerie() throws Exception {
 		texto = new StringBuilder();
 
