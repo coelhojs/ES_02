@@ -1,4 +1,3 @@
-package Parte_02;
 
 public class ArvoreBinaria {
 	private No raiz;
@@ -160,19 +159,52 @@ public class ArvoreBinaria {
 		return cont;
 	}
 
+//questão 01
 	public int alturaArvore() {
 		return alturaArvore(raiz);
 	}
 
 	private int alturaArvore(No i) {
-		int alturaEsq = 0, alturaDir = 0;
-		if (i.esq == null && i.dir == null) {
+		if (i != null) {
+			int alturaEsq = alturaArvore(i.esq);
+			int alturaDir = alturaArvore(i.dir);
+			i.depth = (alturaEsq > alturaDir) ? alturaEsq : alturaDir;
+			return i.depth + 1;
+		} else {
 			return 0;
-		} else if (i != null) {
-			alturaEsq = alturaArvore(i.esq);
-			alturaDir = alturaArvore(i.dir);
 		}
-		return (alturaEsq >= alturaDir) ? alturaEsq + 1 : alturaDir + 1;
+	}
+
+//questão 02
+	public void soma() {
+		System.out.println(soma(raiz));
+	}
+
+	private int soma(No i) {
+		if (i != null) {
+			return soma(i.esq) + i.elemento + soma(i.dir);
+		} else {
+			return 0;
+		}
+	}
+
+//questão 03
+	public boolean checkTree() {
+		return checkTree(raiz);
+	}
+
+	private boolean checkTree(No i) {
+		boolean resposta = true;
+		if (i != null) {
+			if (i.esq != null && i.esq.elemento >= i.elemento) {
+				resposta = false;
+			} else if (i.dir != null && i.dir.elemento <= i.elemento) {
+				resposta = false;
+			}
+			resposta = resposta && checkTree(i.esq);
+			resposta = resposta && checkTree(i.dir);
+		}
+		return resposta;
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -182,7 +214,7 @@ public class ArvoreBinaria {
 		arvore.inserir(7);
 		arvore.inserir(77);
 		arvore.inserir(13);
-		arvore.inserir(10);
+		arvore.inserir(90);
 
 		System.out.println("Mostrar Central:");
 		arvore.mostrarCentral();
@@ -190,5 +222,7 @@ public class ArvoreBinaria {
 		System.out.println("Folhas:" + arvore.contarFolhas());
 		System.out.println("Nós:" + arvore.contarNosPreenchidos());
 		System.out.println("Altura da arvore: " + arvore.alturaArvore());
+		arvore.soma();
+		System.out.println(arvore.checkTree());
 	}
 }

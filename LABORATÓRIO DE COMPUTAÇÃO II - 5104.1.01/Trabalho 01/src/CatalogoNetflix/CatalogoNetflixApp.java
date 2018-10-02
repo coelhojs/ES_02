@@ -3,11 +3,11 @@ package CatalogoNetflix;
 public class CatalogoNetflixApp {
 
 	public static void main(String[] args) throws Exception {
-		Catalogo catalogo = new Catalogo();
+		Catalogo_old catalogo_old = new Catalogo_old();
 		
 		
-		catalogo.inicializarCatalogo();
+		catalogo_old.inicializarCatalogo();
 				
-		catalogo.menu();
+		catalogo_old.menu();
 	}
 }
