@@ -1,4 +1,4 @@
-package Questão_03;
+package Questao_03;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

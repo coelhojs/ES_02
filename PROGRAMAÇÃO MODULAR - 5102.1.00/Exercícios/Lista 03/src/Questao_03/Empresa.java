@@ -1,4 +1,4 @@
-package Questão_03;
+package Questao_03;
 
 public class Empresa {
 
@@ -24,9 +24,9 @@ public class Empresa {
 	public String exibirClientes() {
 		StringBuilder valor = new StringBuilder();
 		for (int i = 0; i < numPessoas; i++)
-			valor.append("Cliente: " + clientes[i].getNome() + " CPF: " + clientes[i].getCpf() + " Endereço: "
+			valor.append("Cliente: " + clientes[i].getNome() + " CPF: " + clientes[i].getCpf() + " Endereï¿½o: "
 					+ clientes[i].getEndereco() + " Telefone: " + clientes[i].getTelefone() + " Idade: "
-					+ clientes[i].getIdade() + " Sexo: " + clientes[i].getSexo() + " Limite de crédito: "
+					+ clientes[i].getIdade() + " Sexo: " + clientes[i].getSexo() + " Limite de crï¿½dito: "
 					+ clientes[i].getLimiteCredito() + "\n");
 		return valor.toString();
 	}

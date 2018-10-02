@@ -1,4 +1,4 @@
-package Questão_03;
+package Questao_03;
 
 public class Cliente {
 	private String endereco, nome, sexo;

@@ -1,4 +1,4 @@
-package Questão_03;
+package Questao_03;
 
 public class PessoaFisica extends Pessoa {
 	private long cpf;
