@@ -113,15 +113,14 @@ public class Catalogo {
 	}
 
 	void favoritar(Serie serie, int pos) throws Exception {
-		if (n == 0 || pos < 0 || pos > n) {
+		if ( pos < 0 || pos > series.length) {
 			throw new Exception("Erro! Lista cheia");
 		} else {
 			// levar elementos para o fim do array
 			//for (int i = n; i > pos; i--) {
 			//	series[i] = series[i - 1];
 			//}
-			favoritos[pos] = null;
-			n++;
+			favoritos[pos] = series[pos];
 		}
 	}
 
@@ -159,13 +158,13 @@ public class Catalogo {
 		}
 	}
 
-	Serie desfavoritar(int seriePos) throws Exception {
-		if (n == 0 || seriePos < 0 || seriePos >= n) {
+	Serie desfavoritar(int pos) throws Exception {
+		if ( pos < 0 || pos >= n) {
 			throw new Exception("Erro!");
 		} else {
-			Serie resp = series[seriePos];
+			Serie resp = series[pos];
 			n--;
-			for (int i = seriePos; i < n; i++) {
+			for (int i = pos; i < n; i++) {
 				series[i] = series[i + 1];
 			}
 			return resp;
