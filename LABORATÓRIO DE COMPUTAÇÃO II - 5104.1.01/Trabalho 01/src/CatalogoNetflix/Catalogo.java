@@ -9,18 +9,19 @@ import javax.swing.JOptionPane;
 
 public class Catalogo {
 	Serie[] series, favoritos;
-	StringBuilder texto;
+	int contFavs, contSeries, i, match, opcao;
 	String resultado, serie;
-	int n, i, match, opcao;
+	StringBuilder texto;
 	Object[] opcoesIniciais = { "Abrir o catalogo", "Pesquisar serie", "Lista de favoritas",
-			"Pedir uma sugestao de serie", "Sair" };
-	Object[] opcoesPesquisa = { "Adicionar serie aos favoritos", "Remover dos favoritos", "Voltar ao menu anterior",
-			"Sair" };
+			"Pedir uma sugestao de serie", "Sair" },
+			opcoesPesquisa = { "Adicionar serie aos favoritos", "Remover dos favoritos", "Voltar ao menu anterior",
+					"Sair" };
 
 	Catalogo(int tamanho) {
 		series = new Serie[tamanho];
 		favoritos = new Serie[tamanho];
-		n = 0;
+		contFavs = 0;
+		contSeries = 0;
 	}
 
 	public void inicializarCatalogo() throws Exception {
@@ -57,7 +58,7 @@ public class Catalogo {
 		while (opcao != 4) {
 			switch (opcao) {
 			case 0:
-				opcao = JOptionPane.showOptionDialog(null, abrirCatalogo(), "Catalogo de series",
+				opcao = JOptionPane.showOptionDialog(null, abrirLista(series), "Catalogo de series",
 						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesIniciais,
 						opcoesIniciais[0]);
 				break;
@@ -65,7 +66,7 @@ public class Catalogo {
 				pesquisarSerie();
 				break;
 			case 2:
-				listaFavoritos();
+				abrirLista(favoritos);
 				break;
 			case 3:
 				sugestaoSerie();
@@ -77,50 +78,24 @@ public class Catalogo {
 		}
 	}
 
-	void inserirInicio(Serie serie) throws Exception {
-		if (n >= series.length) {
+	void inserirFim(Serie serie) throws Exception {
+		if (contSeries >= series.length) {
 			throw new Exception("Erro!");
 		} else {
-			// levar elementos para o fim do array
-			for (int i = n; i > 0; i--) {
+			series[contSeries] = serie;
+			contSeries++;
+		}
+	}
+
+	void favoritar(Serie serie) throws Exception {
+		if (contFavs >= series.length) {
+			throw new Exception("Erro!");
+		} else {
+			for (int i = contFavs; i > 0; i--) {
 				series[i] = series[i - 1];
 			}
 			series[0] = serie;
-			n++;
-		}
-	}
-
-	void inserirFim(Serie serie) throws Exception {
-		if (n >= series.length) {
-			throw new Exception("Erro!");
-		} else {
-			series[n] = serie;
-			n++;
-		}
-	}
-
-	void inserir(Serie serie, int pos) throws Exception {
-		if (n >= series.length || pos < 0 || pos > n) {
-			throw new Exception("Erro! Lista cheia");
-		} else {
-			// levar elementos para o fim do array
-			for (int i = n; i > pos; i--) {
-				series[i] = series[i - 1];
-			}
-			series[pos] = serie;
-			n++;
-		}
-	}
-
-	void favoritar(Serie serie, int pos) throws Exception {
-		if ( pos < 0 || pos > series.length) {
-			throw new Exception("Erro! Lista cheia");
-		} else {
-			// levar elementos para o fim do array
-			//for (int i = n; i > pos; i--) {
-			//	series[i] = series[i - 1];
-			//}
-			favoritos[pos] = series[pos];
+			contFavs++;
 		}
 	}
 
@@ -159,7 +134,7 @@ public class Catalogo {
 	}
 
 	Serie desfavoritar(int pos) throws Exception {
-		if ( pos < 0 || pos >= n) {
+		if (pos < 0 || pos >= n) {
 			throw new Exception("Erro!");
 		} else {
 			Serie resp = series[pos];
@@ -171,26 +146,20 @@ public class Catalogo {
 		}
 	}
 
-	void mostrar() {
-		System.out.print("[ ");
-		for (int i = 0; i < n; i++) {
-			System.out.print(series[i].getNome() + " ");
-		}
-		System.out.println("]");
-	}
-
-	public String abrirCatalogo() throws Exception {
+	public String abrirLista(Serie[] lista) throws Exception {
 		texto = new StringBuilder();
-
-		for (i = 1; i < series.length; i++) {
-			texto.append(series[i].getNome() + ", " + series[i].getNumTemporadas() + " temporadas");
-			texto.append("        ");
-			if (i % 4 == 0) {
-				texto.append("\n\n");
+		if (lista.length > 0) {
+			for (i = 1; i < lista.length; i++) {
+				texto.append(lista[i].getNome() + ", " + lista[i].getNumTemporadas() + " temporadas");
+				texto.append("        ");
+				if (i % 4 == 0) {
+					texto.append("\n\n");
+				}
 			}
-			System.out.println(series[i].getId());
+			return texto.toString();
+		} else {
+			return "Lista vazia";
 		}
-		return texto.toString();
 	}
 
 	public void pesquisarSerie() throws Exception {
@@ -221,6 +190,7 @@ public class Catalogo {
 				switch (opcao) {
 				case 0:
 					favoritar(series[match], series[match].getId());
+					abrirLista(favoritos);
 					break;
 				case 1:
 //desfavoritar();
@@ -238,24 +208,11 @@ public class Catalogo {
 			menu();
 		}
 	}
-	/*
-	 * public void adicionarFavorito(Serie serie) throws Exception { for (i = 0; i <
-	 * favoritos.length; i++) { if (favoritos[i] == null) { favoritos[i] =
-	 * series[i]; } else { throw new Exception("Erro! Lista cheia"); } } }
-	 * 
-	 * public void removerFavoritos() throws Exception {
-	 * 
-	 * }
-	 */
-
-	public void listaFavoritos() throws Exception {
-
-	}
 
 	public void sugestaoSerie() throws Exception {
 
 	}
-	
+
 	public void encerrar() throws Exception {
 		System.exit(0);
 	}
