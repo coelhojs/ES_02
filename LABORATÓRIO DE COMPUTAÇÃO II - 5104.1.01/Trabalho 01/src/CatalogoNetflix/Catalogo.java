@@ -1,7 +1,7 @@
 /*
 OK • Visualize todas as séries disponíveis para exibição
 OK • Busque por série na lista de séries disponíveis
-• Crie sua lista de séries favoritas
++- • Crie sua lista de séries favoritas
 • Remova elementos da sua lista de séries favoritas
 • Visualize sua lista de séries favoritas
 • Considerando a lista de séries favoritas, crie uma opção para sugestão de uma série baseado na lista de séries ou em escolha aleatória.
@@ -114,45 +114,33 @@ public class Catalogo {
 		if (contFavs >= favoritos.length) {
 			throw new Exception("Erro!");
 		} else {
-			// comparacao
+			// a comparacao está funcionando, mas o valor de i não está passando para o segundo if 
 			for (int i = 0; i < contFavs; i++) {
-				if (serie.equals(favoritos[i])) {
+				if (serie.getNome().equals(favoritos[i].getNome())) {
+					System.out.println(i);
 					i = 0;
-				} else {
-					i = contFavs;
+					System.out.println("apos: " + i);
 				}
 			}
 			// se a serie ainda nao estiver na lista de favoritos, execute:
-			for (int aux = i; i > 0; i--) {
-				favoritos[aux] = favoritos[aux - 1];
+			if (i > 0) {
+				for (i = contFavs; i > 0; i--) {
+					favoritos[i] = favoritos[i - 1];
+				}
+				favoritos[0] = serie;
+				contFavs++;
 			}
-			favoritos[0] = serie;
-			contFavs++;
 		}
 	}
 
-	void favoritarTEST(Serie serie) throws Exception {
-		if (contFavs >= series.length) {
-			throw new Exception("Erro!");
+	String desfavoritar(Serie serie) throws Exception {
+		if (contFavs < 1) {
+			return "Não há favoritos na sua lista.";
 		} else {
-			for (int i = contFavs; i > 0; i--) {
-				favoritos[i] = favoritos[i - 1];
+			for (int i = 0; i < contFavs; i++) {
+				serie = series[i + 1];
 			}
-			favoritos[0] = serie;
-			contFavs++;
-		}
-	}
-
-	Serie desfavoritar(int pos) throws Exception {
-		if (pos < 0 || pos >= contFavs) {
-			throw new Exception("Erro!");
-		} else {
-			Serie resp = series[pos];
-			contFavs--;
-			for (int i = pos; i < contFavs; i++) {
-				series[i] = series[i + 1];
-			}
-			return resp;
+			return "Favorito removido.";
 		}
 	}
 
@@ -217,7 +205,7 @@ public class Catalogo {
 				switch (opcao) {
 				case 0:
 					favoritar(series[match]);
-					opcao = 4;
+					// opcao = 4;
 					menu();
 					break;
 				case 1:
@@ -226,11 +214,11 @@ public class Catalogo {
 					// menu();
 					break;
 				case 2:
-					opcao = 4;
+					// opcao = 4;
 					menu();
 					break;
 				case 3:
-					opcao = 4;
+					// opcao = 4;
 					encerrar();
 					break;
 				}
