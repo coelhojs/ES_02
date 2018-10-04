@@ -12,28 +12,21 @@ public class Catalogo {
 	StringBuilder texto;
 	String resultado, serie;
 	int n, i, match, opcao;
-
-	Object[] opcoesIniciais = { "Abrir o catálogo", "Pesquisar série", "Lista de favoritas",
-			"Pedir uma sugestão de série", "Sair" };
-
-	Object[] opcoesPesquisa = { "Adicionar série aos favoritos", "Voltar ao menu anterior" };
-
-//	Object[] opcoesInput = { "OK", "Voltar" };
-
-	Catalogo() {
-		this(61);
-	}
+	Object[] opcoesIniciais = { "Abrir o catalogo", "Pesquisar serie", "Lista de favoritas",
+			"Pedir uma sugestao de serie", "Sair" };
+	Object[] opcoesPesquisa = { "Adicionar serie aos favoritos", "Remover dos favoritos", "Voltar ao menu anterior",
+			"Sair" };
 
 	Catalogo(int tamanho) {
 		series = new Serie[tamanho];
+		favoritos = new Serie[tamanho];
 		n = 0;
 	}
 
 	public void inicializarCatalogo() throws Exception {
 		File file = new File("Series.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-		String linha = null;
-		linha = br.readLine();
+		String linha = br.readLine();
 
 		while (i < series.length) {
 			String campos[] = linha.split(";");
@@ -59,12 +52,12 @@ public class Catalogo {
 
 	public void menu() throws Exception {
 
-		int opcao = JOptionPane.showOptionDialog(null, "Selecione a opção abaixo", "Bem vindo ao Catálogo Netflix",
+		int opcao = JOptionPane.showOptionDialog(null, "Selecione a opcao abaixo", "Bem vindo ao Catalogo Netflix",
 				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesIniciais, opcoesIniciais[0]);
 		while (opcao != 4) {
 			switch (opcao) {
 			case 0:
-				opcao = JOptionPane.showOptionDialog(null, abrirCatalogo(), "Catálogo de séries",
+				opcao = JOptionPane.showOptionDialog(null, abrirCatalogo(), "Catalogo de series",
 						JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesIniciais,
 						opcoesIniciais[0]);
 				break;
@@ -120,14 +113,14 @@ public class Catalogo {
 	}
 
 	void favoritar(Serie serie, int pos) throws Exception {
-		if (n >= series.length || pos < 0 || pos > n) {
+		if (n == 0 || pos < 0 || pos > n) {
 			throw new Exception("Erro! Lista cheia");
 		} else {
 			// levar elementos para o fim do array
-			for (int i = n; i > pos; i--) {
-				series[i] = series[i - 1];
-			}
-			series[pos] = serie;
+			//for (int i = n; i > pos; i--) {
+			//	series[i] = series[i - 1];
+			//}
+			favoritos[pos] = null;
 			n++;
 		}
 	}
@@ -201,42 +194,47 @@ public class Catalogo {
 		return texto.toString();
 	}
 
-	// quando clico no cancel, dá erro de exception
 	public void pesquisarSerie() throws Exception {
 		texto = new StringBuilder();
 
-		serie = JOptionPane.showInputDialog(null, "Informe o nome da Série:", "Pesquisa de série",
+		serie = JOptionPane.showInputDialog(null, "Informe o nome da Serie:", "Pesquisa de serie",
 				JOptionPane.OK_CANCEL_OPTION);
 		if (serie != null) {
 			for (i = 1; i < series.length; i++) {
 				if (serie.equalsIgnoreCase(series[i].getNome())) {
 					match = i;
-					texto.append(series[i].getNome() + ", " + series[i].getTipo() + ", duração: "
-							+ series[i].getDuracao() + ", País: " + series[i].getPais() + ", Idioma: "
-							+ series[i].getIdioma() + ",\nEmissora: " + series[i].getEmissora() + ", Transmissão: "
+					texto.append(series[i].getNome() + ", " + series[i].getTipo() + ", duracao: "
+							+ series[i].getDuracao() + ", Pais: " + series[i].getPais() + ", Idioma: "
+							+ series[i].getIdioma() + ",\nEmissora: " + series[i].getEmissora() + ", Transmissao: "
 							+ series[i].getTransmissao() + ", Temporadas: " + series[i].getNumTemporadas()
-							+ ", Episódios: " + series[i].getNumEpisodios());
+							+ ", Episodios: " + series[i].getNumEpisodios());
 					resultado = texto.toString();
 				}
 			}
 			if (!serie.equalsIgnoreCase(series[match].getNome())) {
 				match = 999;
-				resultado = "Verifique no catálogo o nome digitado.";
+				resultado = "Verifique no catalogo o nome digitado.";
 			}
-			opcao = JOptionPane.showOptionDialog(null, resultado, "Catálogo de séries", JOptionPane.DEFAULT_OPTION,
+			opcao = JOptionPane.showOptionDialog(null, resultado, "Catalogo de series", JOptionPane.DEFAULT_OPTION,
 					JOptionPane.INFORMATION_MESSAGE, null, opcoesPesquisa, opcoesPesquisa[0]);
 
-			switch (opcao) {
-			case 1:
-				favoritar(series[match], series[match].getId());
-				break;
-			case 2:
-				
-				break;
-			default:
-				break;
+			while (opcao != 4) {
+				switch (opcao) {
+				case 0:
+					favoritar(series[match], series[match].getId());
+					break;
+				case 1:
+//desfavoritar();
+					break;
+				case 2:
+					menu();
+					break;
+				case 3:
+					opcao = 4;
+					encerrar();
+					break;
+				}
 			}
-
 		} else {
 			menu();
 		}
@@ -257,5 +255,9 @@ public class Catalogo {
 
 	public void sugestaoSerie() throws Exception {
 
+	}
+	
+	public void encerrar() throws Exception {
+		System.exit(0);
 	}
 }
