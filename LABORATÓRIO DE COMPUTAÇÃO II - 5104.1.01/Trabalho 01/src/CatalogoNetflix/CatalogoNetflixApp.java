@@ -6,6 +6,7 @@ public class CatalogoNetflixApp {
 		Catalogo catalogo = new Catalogo(61);
 		
 		catalogo.inicializarCatalogo();
+		//catalogo.inicializarFavoritos();
 				
 		catalogo.menu();
 	}
