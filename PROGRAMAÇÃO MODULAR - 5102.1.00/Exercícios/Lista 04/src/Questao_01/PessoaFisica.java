@@ -1,4 +1,4 @@
-package Questão_01;
+package Questao_01;
 
 public class PessoaFisica extends Pessoa {
 	private long cpf;
@@ -39,4 +39,6 @@ public class PessoaFisica extends Pessoa {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+
+	
 }

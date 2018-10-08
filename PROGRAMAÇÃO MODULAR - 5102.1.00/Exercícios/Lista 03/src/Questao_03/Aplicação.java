@@ -20,11 +20,6 @@ public class Aplicação {
 				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[0]);
 		switch (opcao) {
 		case 0:
-			// Cliente cliente = new Cliente(pj, limiteCredito);
-			pf = new PessoaFisica("Nome do cliente", "endereço", 985877928, 11254085610L, 24, "masculino");
-			cliente = new Cliente(pf, 500);
-			pessoa.adicionarCliente(cliente);
-
 			nome = JOptionPane.showInputDialog(null, "Informe o nome:", "Cadastro", JOptionPane.OK_CANCEL_OPTION);
 			endereco = JOptionPane.showInputDialog(null, "Informe o endereço:", "Cadastro",
 					JOptionPane.OK_CANCEL_OPTION);
