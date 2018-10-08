@@ -1,2 +1,4 @@
-1. A herança rompe a barreira do encapsulamento porque a permite acessar os atributos das classes superiores.
-4. 
+1. A herança rompe a barreira do encapsulamento porque permite acessar os atributos das classes superiores.
+4. Utilizar herança para implementar a classe Cliente não é possível devido aos requisitos dessa classe, que 
+possui atributos de duas classes diferentes, Pessoa Física e Pessoa Jurídica. Utilizar herança para a classe 
+Funcionário é viável pois funcionários possuem atributos da classe Pessoa Física.
