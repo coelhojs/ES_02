@@ -62,6 +62,11 @@ public class Data {
 		return diaDaSemana.toString();
 	}
 
+	public String mes() {
+		String mes = getData().format(DateTimeFormatter.ofPattern("MMMM", new Locale("pt", "BR")));
+		return mes.toString();
+	}
+
 	public boolean eAnoBissexto() {
 		boolean eAnoBissexto = this.data.isLeapYear();
 		return eAnoBissexto;
@@ -70,9 +75,20 @@ public class Data {
 	public void proximoDia() {
 		setData(this.data.plusDays(1));
 	}
-	
-	@override
+
+	@Override
 	public String toString() {
-		
+		StringBuilder dataExtenso = new StringBuilder();
+		dataExtenso.append(getDia() + " de " + mes() + " de " + getAno() + ".");
+		return dataExtenso.toString();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
