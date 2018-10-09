@@ -70,4 +70,9 @@ public class Data {
 	public void proximoDia() {
 		setData(this.data.plusDays(1));
 	}
+	
+	@override
+	public String toString() {
+		
+	}
 }
