@@ -1,8 +1,3 @@
 1. Alternativa D;
-2. Alternativa A;
+2. Alternativa C;
 5. Porque n�o podemos controlar o garbage collector. A boa pr�tica para liberar recursos � retirar todas as refer�ncias aquele endere�o de mem�ria.
-
-//CORREÇÃO:
-1. OK
-2 Alternativa C;
-5. OK

@@ -40,5 +40,4 @@ public class PessoaFisica extends Pessoa {
 		this.sexo = sexo;
 	}
 
-	
 }
