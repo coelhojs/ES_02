@@ -21,8 +21,8 @@ public class Pilha {
 	int desempilhar() throws Exception {
 		return f1.desenfileirar();
 	}
-	
-	boolean isVazia(){
+
+	boolean isVazia() {
 		return f1.isVazia();
 	}
 

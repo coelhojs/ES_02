@@ -77,7 +77,7 @@ public class Aula01Recurssao {
 			resp = 0;
 		else
 			resp = 5 + multiplosCinco(n - 1);
-		
+
 		System.out.println("5 * " + n + " = " + resp);
 		return resp;
 	}

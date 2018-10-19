@@ -16,7 +16,7 @@ public class Aula03Leitura {
 
 		System.out.println("Nome lido " + nome);
 
-		br.close();
+		br.close();	
 	}
 
 }
