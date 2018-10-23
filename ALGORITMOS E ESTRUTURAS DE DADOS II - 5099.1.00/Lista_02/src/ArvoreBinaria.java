@@ -1,41 +1,37 @@
 public class ArvoreBinaria {
-	private No raiz;
-
-	public ArvoreBinaria() {
-		raiz = null;
-	}
+	private No raiz, raiz2;
 
 	public void inserir(int x) throws Exception {
 		raiz = inserir(x, raiz);
 	}
 
-	private No inserir(int x, No i) throws Exception {
-		if (i == null) {
-			i = new No(x);
-		} else if (x < i.elemento) {
-			i.esq = inserir(x, i.esq);
-		} else if (x > i.elemento) {
-			i.dir = inserir(x, i.dir);
+	private No inserir(int x, No raiz) throws Exception {
+		if (raiz == null) {
+			raiz = new No(x);
+		} else if (x < raiz.elemento) {
+			raiz.esq = inserir(x, raiz.esq);
+		} else if (x > raiz.elemento) {
+			raiz.dir = inserir(x, raiz.dir);
 		} else {
 			throw new Exception("Erro!");
 		}
-		return i;
+		return raiz;
 	}
 
 	public boolean pesquisar(int x) {
 		return pesquisar(x, raiz);
 	}
 
-	private boolean pesquisar(int x, No i) {
+	private boolean pesquisar(int x, No raiz) {
 		boolean resp;
-		if (i == null) {
+		if (raiz == null) {
 			resp = false;
-		} else if (x == i.elemento) {
+		} else if (x == raiz.elemento) {
 			resp = true;
-		} else if (x < i.elemento) {
-			resp = pesquisar(x, i.esq);
+		} else if (x < raiz.elemento) {
+			resp = pesquisar(x, raiz.esq);
 		} else {
-			resp = pesquisar(x, i.dir);
+			resp = pesquisar(x, raiz.dir);
 		}
 		return resp;
 	}
@@ -44,31 +40,31 @@ public class ArvoreBinaria {
 		raiz = remover(x, raiz);
 	}
 
-	private No remover(int x, No i) throws Exception {
-		if (i == null) {
+	private No remover(int x, No raiz) throws Exception {
+		if (raiz == null) {
 			throw new Exception("Erro!");
-		} else if (x < i.elemento) {
-			i.esq = remover(x, i.esq);
-		} else if (x > i.elemento) {
-			i.dir = remover(x, i.dir);
-		} else if (i.dir == null) {
-			i = i.esq;
-		} else if (i.esq == null) {
-			i = i.dir;
+		} else if (x < raiz.elemento) {
+			raiz.esq = remover(x, raiz.esq);
+		} else if (x > raiz.elemento) {
+			raiz.dir = remover(x, raiz.dir);
+		} else if (raiz.dir == null) {
+			raiz = raiz.esq;
+		} else if (raiz.esq == null) {
+			raiz = raiz.dir;
 		} else {
-			i.esq = anterior(i, i.esq);
+			raiz.esq = anterior(raiz, raiz.esq);
 		}
-		return i;
+		return raiz;
 	}
 
-	private No anterior(No i, No j) {
-		if (j.dir != null)
-			j.dir = anterior(i, j.dir);
+	private No anterior(No raiz, No raizEsq) {
+		if (raizEsq.dir != null)
+			raizEsq.dir = anterior(raiz, raizEsq.dir);
 		else {
-			i.elemento = j.elemento;
-			j = j.esq;
+			raiz.elemento = raizEsq.elemento;
+			raizEsq = raizEsq.esq;
 		}
-		return j;
+		return raizEsq;
 	}
 
 	public void mostrarCentral() {
@@ -107,17 +103,63 @@ public class ArvoreBinaria {
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
-		ArvoreBinaria arvore = new ArvoreBinaria();
-		arvore.inserir(15);
-		arvore.inserir(20);
-		arvore.inserir(7);
-		arvore.inserir(77);
-		arvore.inserir(13);
-		arvore.inserir(10);
+	// Questão 01
+	public int contarFolhas() {
+		return contarFolhas(raiz);
+	}
 
-		System.out.println("Mostrar Central:");
-		arvore.mostrarCentral();
-		System.out.println();
+	private int contarFolhas(No raiz) {
+		int cont = 0;
+		if (raiz != null) {
+			if (raiz.esq == null && raiz.dir == null) {
+				cont++;
+			}
+			cont += contarFolhas(raiz.esq);
+			cont += contarFolhas(raiz.dir);
+		}
+		return cont;
+	}
+
+	// Questão 02
+
+	public boolean compararArv(No arv2) {
+		return compararArv(raiz, arv2);
+	}
+
+	public boolean compararArv(No raiz, No raiz2) {
+		boolean resp;
+		if (raiz.elemento != raiz2.elemento) {
+			resp = false;
+		} else {
+			boolean compararEsq = compararArv(raiz.esq, raiz2.esq);
+			if (compararEsq) {
+				boolean compararDir = compararArv(raiz.dir, raiz2.dir);
+				if (compararDir) {
+					resp = true;
+				} else {
+					resp = false;
+				}
+			} else {
+				resp = false;
+			}
+		}
+		return resp;
+	}
+
+	// Questão 03
+	public int contarFolhasV() {
+		return contarFolhasV(raiz);
+	}
+
+	private int contarFolhasV(No raiz) {
+		int cont = 0;
+		if (raiz != null) {
+			if (raiz.esq == null && raiz.dir == null) {
+				cont++;
+			}
+			cont += contarFolhas(raiz.esq);
+			cont += contarFolhas(raiz.dir);
+		}
+		return cont;
 	}
 }
