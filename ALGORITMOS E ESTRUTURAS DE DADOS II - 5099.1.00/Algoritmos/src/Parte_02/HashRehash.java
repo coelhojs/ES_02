@@ -2,10 +2,14 @@ package Parte_02;
 
 public class HashRehash {
 	public int tamTabela;
-	public int[] tabela = 
+	//public int[] tabela = new int[7];
+	
+	public HashRehash() {
+		this(7);
+	}
 	
 	public HashRehash(int tamTabela) {
-		this(7);
+		this(tamTabela);
 	}
 
 	int hash(int x) {

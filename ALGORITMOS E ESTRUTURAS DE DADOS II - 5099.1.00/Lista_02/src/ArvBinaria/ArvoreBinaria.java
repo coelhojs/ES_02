@@ -149,6 +149,7 @@ public class ArvoreBinaria {
 	}
 
 	// Questão 03
+	//refazer com 3 casos de teste: 0 folhas, 1 folha e 2 folhas
 	public int contarFolhasV() {
 		return contarFolhasV(raiz);
 	}

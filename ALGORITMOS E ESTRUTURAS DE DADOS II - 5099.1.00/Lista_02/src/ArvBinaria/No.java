@@ -20,9 +20,9 @@ public class No {
 		no.dir = noDirEsq;
 		return noDir;
 	}
-	
+	/*
 	public No rotacionarDir(No no) {
 		
 	}
-
+*/
 }
