@@ -1,5 +1,7 @@
+package ArvBinaria;
+
 public class ArvoreBinaria {
-	private No raiz, raiz2;
+	public No raiz;
 
 	public void inserir(int x) throws Exception {
 		raiz = inserir(x, raiz);

@@ -1,3 +1,4 @@
+package ArvBinaria;
 public class ArvoresApp {
 
 	public static void main(String[] args) throws Exception {
@@ -21,7 +22,7 @@ public class ArvoresApp {
 		arvBin.mostrarCentral();
 		System.out.println();
 		System.out.println("Folhas:" + arvBin.contarFolhas());
-		System.out.println("Comparando as 2 arvores: " + arvBin.compararArv(arvBin2));
+		System.out.println("Comparando as 2 arvores: " + arvBin.compararArv(arvBin2.raiz));
 		
 		
 		// System.out.println("Nós:" + arvBin.contarNosPreenchidos());
