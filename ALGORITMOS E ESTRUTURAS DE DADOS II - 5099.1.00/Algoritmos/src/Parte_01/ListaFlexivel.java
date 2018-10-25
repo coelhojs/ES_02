@@ -1,4 +1,4 @@
-/*package Parte_01;
+package Parte_01;
 
 public class ListaFlexivel {
 	public Celula primeiro, ultimo;
@@ -76,4 +76,3 @@ public class ListaFlexivel {
 	}
 
 }
-*/
