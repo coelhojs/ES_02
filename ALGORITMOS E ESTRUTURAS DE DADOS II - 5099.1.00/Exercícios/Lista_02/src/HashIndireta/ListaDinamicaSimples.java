@@ -1,9 +1,9 @@
 package HashIndireta;
 
-public class ListaFlexivel {
+public class ListaDinamicaSimples {
 	public Celula primeiro, ultimo;
 
-	public ListaFlexivel() {
+	public ListaDinamicaSimples() {
 		this.primeiro = new Celula();
 		this.ultimo = primeiro;
 	}

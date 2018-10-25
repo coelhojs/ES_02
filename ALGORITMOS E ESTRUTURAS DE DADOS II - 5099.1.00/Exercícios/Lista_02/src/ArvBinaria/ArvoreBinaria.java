@@ -105,6 +105,20 @@ public class ArvoreBinaria {
 		}
 	}
 
+
+	// Questão 02 nova tentativa
+//fazer string do mostrar central, do mostrar pre e do mostrar pos
+
+	/*
+	 * public String printCentral() { String central = null; return
+	 * printCentral(raiz); }
+	 * 
+	 * private String printCentral(No i) { if (i != null) { printCentral(i.esq);
+	 * 
+	 * printCentral(i.dir); } return; }
+	 */
+	
+	
 	// Questão 01
 	public int contarFolhas() {
 		return contarFolhas(raiz);
@@ -123,7 +137,6 @@ public class ArvoreBinaria {
 	}
 
 	// Questão 02
-
 	public boolean compararArv(No arv2) {
 		return compararArv(raiz, arv2);
 	}
@@ -149,7 +162,6 @@ public class ArvoreBinaria {
 	}
 
 	// Questão 03
-	//refazer com 3 casos de teste: 0 folhas, 1 folha e 2 folhas
 	public int contarFolhasV() {
 		return contarFolhasV(raiz);
 	}
