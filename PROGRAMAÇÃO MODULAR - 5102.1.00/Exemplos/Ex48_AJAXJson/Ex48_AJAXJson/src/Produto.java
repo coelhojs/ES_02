@@ -22,6 +22,26 @@ public abstract class Produto implements JsonFormatter {
 	private static int cont = 0;
 	private static int instancias = 0;
 
+	public Produto(String d, float p, int q, LocalDateTime f) {
+		setDescricao(d);
+		setPreco(p);
+		setQuant(q);
+		setDataFabricacao(f);
+
+		id = ++cont;
+		instancias++;
+	}
+
+	public Produto() {
+		descricao = DESCRICAO_PADRAO;
+		preco = 0.01F;
+		quant = 0;
+		dataFabricacao = LocalDateTime.now();
+
+		id = ++cont;
+		instancias++;
+	}
+
 	public static int getCont() {
 		return cont;
 	}
@@ -34,12 +54,6 @@ public abstract class Produto implements JsonFormatter {
 		return id;
 	}
 
-	public boolean emEstoque() {
-		return (quant > 0);
-	}
-
-	public abstract boolean emValidade();
-	
 	public String getDescricao() {
 		return descricao;
 	}
@@ -51,6 +65,12 @@ public abstract class Produto implements JsonFormatter {
 	public int getQuant() {
 		return quant;
 	}
+
+	public boolean emEstoque() {
+		return (quant > 0);
+	}
+
+	public abstract boolean emValidade();
 
 	public LocalDateTime getDataFabricacao() {
 		return dataFabricacao;
@@ -79,29 +99,9 @@ public abstract class Produto implements JsonFormatter {
 			this.dataFabricacao = dataFabricacao;
 	}
 
-	public Produto(String d, float p, int q, LocalDateTime f) {
-		setDescricao(d);
-		setPreco(p);
-		setQuant(q);
-		setDataFabricacao(f);
-
-		id = ++cont;
-		instancias++;
-	}
-
-	public Produto() {
-		descricao = DESCRICAO_PADRAO;
-		preco = 0.01F;
-		quant = 0;
-		dataFabricacao = LocalDateTime.now();
-
-		id = ++cont;
-		instancias++;
-	}
-
 	/**
-	 * Método sobreposto da classe Object. É executado quando um objeto precisa
-	 * ser exibido na forma de String.
+	 * Método sobreposto da classe Object. É executado quando um objeto precisa ser
+	 * exibido na forma de String.
 	 */
 	@Override
 	public String toString() {

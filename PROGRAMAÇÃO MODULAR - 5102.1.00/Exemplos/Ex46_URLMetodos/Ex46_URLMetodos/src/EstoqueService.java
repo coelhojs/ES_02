@@ -16,7 +16,7 @@ public final class EstoqueService {
 		Produto p = null;
 
 		Query query = request.getQuery();
-
+		
 		descricao = query.get("descricao");
 		preco = query.getFloat("preco");
 		quant = query.getInteger("quant");

@@ -30,7 +30,9 @@ public class URLMetodo implements Container {
 
 			if (path.startsWith("/adicionarProduto") && "POST".equals(method)) {
 				// http://127.0.0.1:880/adicionarProduto?descricao=leite&preco=3.59&quant=10&tipo=2&dataFabricacao=2017-01-01
+				System.out.println(request);
 				mensagem = estoqueService.adicionarProduto(request);
+				System.out.println(mensagem);
 				this.enviaResposta(Status.CREATED, response, mensagem);
 
 			} else if (path.startsWith("/consultarProduto") && "GET".equals(method)) {

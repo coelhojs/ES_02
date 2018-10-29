@@ -13,6 +13,11 @@ public class Estoque implements JsonFormatter {
 	private Produto[] listaDeProdutos;
 	private int numProdutos;
 
+	public Estoque() {
+		listaDeProdutos = new Produto[MAX_PRODUTOS];
+		numProdutos = 0;
+	}
+	
 	public int getNumProdutos() {
 		return numProdutos;
 	}
@@ -65,11 +70,6 @@ public class Estoque implements JsonFormatter {
 			valor.append(listaDeProdutos[i] + "\n");
 		}
 		return valor.toString();
-	}
-
-	public Estoque() {
-		listaDeProdutos = new Produto[MAX_PRODUTOS];
-		numProdutos = 0;
 	}
 
 	@Override

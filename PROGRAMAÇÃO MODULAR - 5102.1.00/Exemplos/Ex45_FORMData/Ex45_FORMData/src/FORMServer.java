@@ -31,7 +31,7 @@ public class FORMServer implements Container {
 			int idade = query.getInteger("idade");
 			
 			body.println("Teste de requisição com dados de formulário.");
-			body.println("<h1>NOME: " + nome + "</h1>\nIDADE: " + idade + "");
+			body.println("NOME: " + nome + "\nIDADE: " + idade + "");
 			
 			
 			body.close();

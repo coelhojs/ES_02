@@ -29,6 +29,15 @@ public class HashReserva {
 		}
 	}
 
+	public void remover(int x) {
+		int pos = hash(x);
+		if (tabela[pos] == x) {
+			tabela[pos] = null;
+		} else if (tabela[pos] == null) {
+			
+		}
+	}
+
 	public int pesquisar(int x) {
 		int i = hash(x);
 		Integer resp = null;
