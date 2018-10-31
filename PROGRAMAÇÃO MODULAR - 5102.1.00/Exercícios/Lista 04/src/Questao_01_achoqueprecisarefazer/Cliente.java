@@ -1,4 +1,4 @@
-package Questao_01;
+package Questao_01_achoqueprecisarefazer;
 
 public class Cliente {
 	private String endereco, nome, sexo;

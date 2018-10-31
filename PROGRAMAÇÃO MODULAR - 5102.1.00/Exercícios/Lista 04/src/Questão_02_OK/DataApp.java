@@ -1,4 +1,4 @@
-package Questão_02;
+package Questão_02_OK;
 
 import java.time.format.DateTimeFormatter;
 
@@ -23,7 +23,7 @@ public class DataApp {
 		System.out.println("Próximo dia após a nova data: " + formatter.format(data.getData()));
 		System.out.println("\nPolimorfismo: ");
 		System.out.println("Data por extenso: " + data);
-		System.out.println("Teste equals: " + hoje.toString().equals(data.toString()));
+		System.out.println("Teste equals: " + hoje.equals(data));
 
 	}
 

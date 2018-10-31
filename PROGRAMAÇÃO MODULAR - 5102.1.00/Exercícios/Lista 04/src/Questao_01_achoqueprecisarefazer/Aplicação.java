@@ -1,4 +1,4 @@
-package Questao_01;
+package Questao_01_achoqueprecisarefazer;
 
 import javax.swing.JOptionPane;
 

@@ -1,4 +1,4 @@
-package Questão_04;
+package Questão_04_OK;
 
 import java.time.LocalDate;
 
@@ -10,6 +10,11 @@ public class Peca extends Item {
 		super(nome, preco);
 		this.tipo = tipo;
 		this.garantia = garantia;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " Tipo: " + this.tipo + " Garantia: " + this.garantia;
 	}
 
 	public String getTipo() {

@@ -1,4 +1,4 @@
-package Questao_01;
+package Questao_01_achoqueprecisarefazer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,9 +1,9 @@
-package Questão_04;
+package Questão_04_OK;
 
 import java.time.LocalDate;
 
 public interface NotaFiscal {
-	public void emitirNF(LocalDate hoje);
+	public void emitirNF();
 
 	public LocalDate hoje = LocalDate.now();
 }

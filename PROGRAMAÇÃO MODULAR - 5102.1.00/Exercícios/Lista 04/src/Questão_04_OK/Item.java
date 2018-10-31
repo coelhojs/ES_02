@@ -1,4 +1,4 @@
-package Questão_04;
+package Questão_04_OK;
 
 public abstract class Item {
 	private String nome;
@@ -7,6 +7,11 @@ public abstract class Item {
 	public Item(String nome, double preco) {
 		this.nome = nome;
 		this.preco = preco;
+	}
+
+	@Override
+	public String toString() {
+		return "Item: " + this.nome + " Preco: " + this.preco;
 	}
 
 	public String getNome() {

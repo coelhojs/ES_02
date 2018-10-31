@@ -1,4 +1,4 @@
-package Questao_01;
+package Questao_01_achoqueprecisarefazer;
 
 public class Funcionario {
 	private String endereco, nome, sexo, cargo;

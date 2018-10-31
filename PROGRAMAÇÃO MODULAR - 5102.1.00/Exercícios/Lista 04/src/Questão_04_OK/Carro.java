@@ -1,4 +1,4 @@
-package Questão_04;
+package Questão_04_OK;
 
 public class Carro extends Item {
 	private String cor;
@@ -10,6 +10,11 @@ public class Carro extends Item {
 		this.ano = ano;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + " Cor: "+this.cor+" Ano: "+this.ano;
+	}
+	
 	public String getCor() {
 		return cor;
 	}
