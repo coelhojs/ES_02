@@ -41,7 +41,6 @@ class Aplicacao {
 		bemDuravelDAO.add(new BemDuravel("Geladeira", 4000.00F, 10, LocalDateTime.now(), 36));
 
 		System.out.println(bemDuravelDAO.get("Televisao"));
-		
-		
+
 	}
 }

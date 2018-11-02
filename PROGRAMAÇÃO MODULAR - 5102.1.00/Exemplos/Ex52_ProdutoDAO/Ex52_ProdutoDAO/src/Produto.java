@@ -16,12 +16,41 @@ abstract class Produto {
 	private int quant;
 	private LocalDateTime dataFabricacao;
 
+	public Produto(String d, float p, int q, LocalDateTime f) {
+		setDescricao(d);
+		setPreco(p);
+		setQuant(q);
+		setDataFabricacao(f);
+	}
+
+	public Produto() {
+		descricao = DESCRICAO_PADRAO;
+		preco = 0.01F;
+		quant = 0;
+		dataFabricacao = LocalDateTime.now();
+	}
+
+	/**
+	 * Método sobreposto da classe Object. É executado quando um objeto precisa ser
+	 * exibido na forma de String.
+	 */
+	@Override
+	public String toString() {
+		return "Produto: " + descricao + "   Preço: R$" + preco + "   Quant.: " + quant + "   Fabricação: "
+				+ dataFabricacao;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return this.descricao.equals(((Produto) obj).getDescricao());
+	}
+
 	public boolean emEstoque() {
 		return (quant > 0);
 	}
 
 	public abstract boolean emValidade();
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -60,36 +89,4 @@ abstract class Produto {
 		if (agora.compareTo(dataFabricacao) >= 0)
 			this.dataFabricacao = dataFabricacao;
 	}
-
-	public Produto(String d, float p, int q, LocalDateTime f) {
-		setDescricao(d);
-		setPreco(p);
-		setQuant(q);
-		setDataFabricacao(f);
-	}
-
-	public Produto() {
-		descricao = DESCRICAO_PADRAO;
-		preco = 0.01F;
-		quant = 0;
-		dataFabricacao = LocalDateTime.now();
-	}
-
-	/**
-	 * Método sobreposto da classe Object. É executado quando um objeto precisa
-	 * ser exibido na forma de String.
-	 */
-	@Override
-	public String toString() {
-		return "Produto: " + descricao + "   Preço: R$" + preco + "   Quant.: " + quant + "   Fabricação: "
-				+ dataFabricacao;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return this.descricao.equals(((Produto) obj).getDescricao());
-	}
 }
-
-
-
