@@ -8,10 +8,10 @@ public class Selection {
 
 	public int getMenor(int vetor[]) {
 		for(int i =0;i<vetor.length;i++) {
-			if(vetor)
+			if(vetor[i]<vetor[i])
 		}
 	}
-	
+
 	public void ordena(int vetor[]) {
 		for (int i = 0; i < vetor.length; i++) {
 			for (int j = 0; j < vetor.length; j++) {
