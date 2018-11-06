@@ -1,4 +1,4 @@
-package Parte_01;
+package Lista;
 
 public class Lista {
 	int[] array;

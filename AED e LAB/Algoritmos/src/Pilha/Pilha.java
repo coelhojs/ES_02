@@ -1,4 +1,4 @@
-package Parte_01;
+package Pilha;
 
 //Pilha: FIFO (First In, First Out)
 //Pilhas possuem duas possibilidades: Inserção no início e remoção no início(menos eficiente) ou Inserção no final 

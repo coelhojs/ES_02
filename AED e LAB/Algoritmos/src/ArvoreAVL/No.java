@@ -1,4 +1,4 @@
-package AVL;
+package ArvoreAVL;
 
 class No {
 	public int elemento; // Conteudo do no.

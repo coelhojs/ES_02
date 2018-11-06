@@ -1,6 +1,6 @@
 package OrdenacaoShellsort;
 
-import OrdenacaoSelection.Ordena;
+import OrdenacaoSelection_OK.Ordena;
 
 public class Shellsort implements Ordena {
 

@@ -1,4 +1,4 @@
-package Parte_01;
+package Fila;
 
 //Fila: FIFO (First In, First Out)
 //Filas possuem duas possibilidades: Inserção no início e remoção no final ou Inserção no final e remoção no Início.

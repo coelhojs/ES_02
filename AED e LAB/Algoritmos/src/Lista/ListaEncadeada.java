@@ -1,4 +1,6 @@
-package Parte_01;
+package Lista;
+
+import Fila.Celula;
 
 public class ListaEncadeada {
 	public Celula primeiro, ultimo;

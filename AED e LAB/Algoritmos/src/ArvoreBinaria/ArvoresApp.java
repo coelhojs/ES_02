@@ -1,4 +1,4 @@
-package ArvBinaria;
+package ArvoreBinaria;
 
 public class ArvoresApp {
 

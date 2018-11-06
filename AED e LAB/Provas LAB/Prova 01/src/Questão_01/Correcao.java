@@ -1,4 +1,4 @@
-package Questão_01;
+/*package Questão_01;
 
 public class Correcao {
 
@@ -23,3 +23,4 @@ public class Correcao {
 	}
 
 }
+*/

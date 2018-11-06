@@ -1,4 +1,4 @@
-package AVL;
+package ArvoreAVL;
 
 public class Teste {
 

@@ -1,7 +1,5 @@
 package OrdenacaoInsertion;
 
-import OrdenacaoSelection.Ordena;
-
 public class Insertion implements Ordena {
 	int comparacoes;
 

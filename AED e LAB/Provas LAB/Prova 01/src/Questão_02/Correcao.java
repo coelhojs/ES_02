@@ -1,4 +1,4 @@
-package Questão_02;
+/*package Questão_02;
 
 public class Correcao {
 	Pilha combina(Pilha p1, Pilha p2) {
@@ -38,3 +38,4 @@ public class Correcao {
 	}
 
 }
+*/

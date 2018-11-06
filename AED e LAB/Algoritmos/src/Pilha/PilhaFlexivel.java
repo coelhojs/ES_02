@@ -1,4 +1,6 @@
-package Parte_01;
+package Pilha;
+
+import Fila.Celula;
 
 public class PilhaFlexivel {
 	public Celula topo;

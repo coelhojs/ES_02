@@ -1,4 +1,4 @@
-package HashIndireta;
+/*package HashIndireta;
 
 public class HashIndireta {
 	public int tamTabela;
@@ -41,3 +41,4 @@ public class HashIndireta {
 
 		}
 }}
+*/
