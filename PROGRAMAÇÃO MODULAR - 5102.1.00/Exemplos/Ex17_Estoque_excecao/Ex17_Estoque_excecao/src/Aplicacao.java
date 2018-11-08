@@ -6,40 +6,39 @@ import javax.swing.JOptionPane;
 class Aplicacao {
 
 	public static void adicionarProduto(Estoque lista) throws ExcecaoEstoqueExcedido, ExcecaoEstoqueNegativo {
-			String desc, valor;
-			float preco;
-			int quant;
-			int op;
+		String desc, valor;
+		float preco;
+		int quant;
+		int op;
 
-			desc = JOptionPane.showInputDialog(null, "Digite descrição do produto:", "Cadastro de produto",
-					JOptionPane.OK_CANCEL_OPTION);
-			valor = JOptionPane.showInputDialog(null, "Digite preço do produto:", "Cadastro de produto",
-					JOptionPane.OK_CANCEL_OPTION);
-			if (valor != null)
-				preco = Float.parseFloat(valor);
-			else
-				preco = 0;
+		desc = JOptionPane.showInputDialog(null, "Digite descrição do produto:", "Cadastro de produto",
+				JOptionPane.OK_CANCEL_OPTION);
+		valor = JOptionPane.showInputDialog(null, "Digite preço do produto:", "Cadastro de produto",
+				JOptionPane.OK_CANCEL_OPTION);
+		if (valor != null)
+			preco = Float.parseFloat(valor);
+		else
+			preco = 0;
 
-			valor = JOptionPane.showInputDialog(null, "Digite quantidade em estoque:", "Cadastro de produto",
-					JOptionPane.OK_CANCEL_OPTION);
-			if (valor != null)
-				quant = Integer.parseInt(valor);
-			else
-				quant = 0;
+		valor = JOptionPane.showInputDialog(null, "Digite quantidade em estoque:", "Cadastro de produto",
+				JOptionPane.OK_CANCEL_OPTION);
+		if (valor != null)
+			quant = Integer.parseInt(valor);
+		else
+			quant = 0;
 
-			valor = JOptionPane.showInputDialog(null,
-					"Qual produto deseja adicionar: 1 - Bem durável, 2 - Bem de consumo.", "Cadastro de produto",
-					JOptionPane.OK_CANCEL_OPTION);
-			if (valor != null) {
-				op = Integer.parseInt(valor);
+		valor = JOptionPane.showInputDialog(null, "Qual produto deseja adicionar: 1 - Bem durável, 2 - Bem de consumo.",
+				"Cadastro de produto", JOptionPane.OK_CANCEL_OPTION);
+		if (valor != null) {
+			op = Integer.parseInt(valor);
 
-				if (op == 1) {
-					lista.adicionar(new BemDuravel(desc, preco, quant, LocalDateTime.now(), 12));
-				} else if (op == 2) {
-					lista.adicionar(
-							new BemDeConsumo(desc, preco, quant, LocalDateTime.now(), LocalDate.now().plusMonths(12)));
-				}
+			if (op == 1) {
+				lista.adicionar(new BemDuravel(desc, preco, quant, LocalDateTime.now(), 12));
+			} else if (op == 2) {
+				lista.adicionar(
+						new BemDeConsumo(desc, preco, quant, LocalDateTime.now(), LocalDate.now().plusMonths(12)));
 			}
+		}
 
 	}
 

@@ -74,6 +74,7 @@ public class Aplicação {
 	}
 
 	public static void main(String[] args) {
+
 		Empresa pessoa = new Empresa();
 
 		Object[] options = { "Cadastrar uma Pessoa", "Exibir Clientes", "Exibir Funcionários", "Sair" };

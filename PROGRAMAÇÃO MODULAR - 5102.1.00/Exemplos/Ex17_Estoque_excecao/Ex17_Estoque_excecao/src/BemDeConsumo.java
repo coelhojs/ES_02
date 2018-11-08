@@ -27,14 +27,15 @@ public class BemDeConsumo extends Produto {
 		dataValidade = LocalDate.now().plusMonths(6);
 	}
 
-	public BemDeConsumo(String d, float p, int q, LocalDateTime f, LocalDate v)  throws ExcecaoEstoqueNegativo, ExcecaoEstoqueExcedido  {
+	public BemDeConsumo(String d, float p, int q, LocalDateTime f, LocalDate v)
+			throws ExcecaoEstoqueNegativo, ExcecaoEstoqueExcedido {
 		super(d, p, q, f);
 		setDataValidade(v);
 	}
 
 	/**
-	 * Método sobreposto da classe Object. É executado quando um objeto precisa
-	 * ser exibido na forma de String.
+	 * Método sobreposto da classe Object. É executado quando um objeto precisa ser
+	 * exibido na forma de String.
 	 */
 	@Override
 	public String toString() {

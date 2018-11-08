@@ -1,4 +1,4 @@
-package Parte_02;
+package HashEncadeamento;
 
 public class HashEncadeamento {
 

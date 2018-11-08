@@ -1,4 +1,4 @@
-package Questão_02;
+package ArvoreBinaria;
 
 public class Arvore {
 	private int contador, comparador;

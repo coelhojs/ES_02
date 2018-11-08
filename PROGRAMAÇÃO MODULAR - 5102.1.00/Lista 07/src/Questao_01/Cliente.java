@@ -68,8 +68,12 @@ public class Cliente {
 		this.sexo = sexo;
 	}
 
-	public void setLimiteCredito(double limiteCredito) {
-		this.limiteCredito = limiteCredito;
+	public void setLimiteCredito(double limiteCredito) throws Exception {
+		if (limiteCredito >= 0) {
+			this.limiteCredito = limiteCredito;
+		} else {
+			throw new ExcecaoValorNegativo();
+		}
 	}
 
 	public void setTelefone(int telefone) {

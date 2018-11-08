@@ -1,39 +1,43 @@
 package ArvoreBinaria;
 
 public class ArvoreBinaria {
-	public No raiz;
+	private No raiz;
+
+	public ArvoreBinaria() {
+		raiz = null;
+	}
 
 	public void inserir(int x) throws Exception {
 		raiz = inserir(x, raiz);
 	}
 
-	private No inserir(int x, No raiz) throws Exception {
-		if (raiz == null) {
-			raiz = new No(x);
-		} else if (x < raiz.elemento) {
-			raiz.esq = inserir(x, raiz.esq);
-		} else if (x > raiz.elemento) {
-			raiz.dir = inserir(x, raiz.dir);
+	private No inserir(int x, No i) throws Exception {
+		if (i == null) {
+			i = new No(x);
+		} else if (x < i.elemento) {
+			i.esq = inserir(x, i.esq);
+		} else if (x > i.elemento) {
+			i.dir = inserir(x, i.dir);
 		} else {
 			throw new Exception("Erro!");
 		}
-		return raiz;
+		return i;
 	}
 
 	public boolean pesquisar(int x) {
 		return pesquisar(x, raiz);
 	}
 
-	private boolean pesquisar(int x, No raiz) {
+	private boolean pesquisar(int x, No i) {
 		boolean resp;
-		if (raiz == null) {
+		if (i == null) {
 			resp = false;
-		} else if (x == raiz.elemento) {
+		} else if (x == i.elemento) {
 			resp = true;
-		} else if (x < raiz.elemento) {
-			resp = pesquisar(x, raiz.esq);
+		} else if (x < i.elemento) {
+			resp = pesquisar(x, i.esq);
 		} else {
-			resp = pesquisar(x, raiz.dir);
+			resp = pesquisar(x, i.dir);
 		}
 		return resp;
 	}
@@ -42,31 +46,31 @@ public class ArvoreBinaria {
 		raiz = remover(x, raiz);
 	}
 
-	private No remover(int x, No raiz) throws Exception {
-		if (raiz == null) {
+	private No remover(int x, No i) throws Exception {
+		if (i == null) {
 			throw new Exception("Erro!");
-		} else if (x < raiz.elemento) {
-			raiz.esq = remover(x, raiz.esq);
-		} else if (x > raiz.elemento) {
-			raiz.dir = remover(x, raiz.dir);
-		} else if (raiz.dir == null) {
-			raiz = raiz.esq;
-		} else if (raiz.esq == null) {
-			raiz = raiz.dir;
+		} else if (x < i.elemento) {
+			i.esq = remover(x, i.esq);
+		} else if (x > i.elemento) {
+			i.dir = remover(x, i.dir);
+		} else if (i.dir == null) {
+			i = i.esq;
+		} else if (i.esq == null) {
+			i = i.dir;
 		} else {
-			raiz.esq = anterior(raiz, raiz.esq);
+			i.esq = anterior(i, i.esq);
 		}
-		return raiz;
+		return i;
 	}
 
-	private No anterior(No raiz, No raizEsq) {
-		if (raizEsq.dir != null)
-			raizEsq.dir = anterior(raiz, raizEsq.dir);
+	private No anterior(No i, No j) {
+		if (j.dir != null)
+			j.dir = anterior(i, j.dir);
 		else {
-			raiz.elemento = raizEsq.elemento;
-			raizEsq = raizEsq.esq;
+			i.elemento = j.elemento;
+			j = j.esq;
 		}
-		return raizEsq;
+		return j;
 	}
 
 	public void mostrarCentral() {
@@ -105,76 +109,86 @@ public class ArvoreBinaria {
 		}
 	}
 
+	// códigos dados em aula
 
-	// Questão 02 nova tentativa
-//fazer string do mostrar central, do mostrar pre e do mostrar pos
-
-	/*
-	 * public String printCentral() { String central = null; return
-	 * printCentral(raiz); }
-	 * 
-	 * private String printCentral(No i) { if (i != null) { printCentral(i.esq);
-	 * 
-	 * printCentral(i.dir); } return; }
-	 */
-	
-	
-	// Questão 01
 	public int contarFolhas() {
 		return contarFolhas(raiz);
 	}
 
-	private int contarFolhas(No raiz) {
+	private int contarFolhas(No i) {
 		int cont = 0;
-		if (raiz != null) {
-			if (raiz.esq == null && raiz.dir == null) {
+		if (i != null) {
+			if (i.esq == null && i.dir == null) {
 				cont++;
 			}
-			cont += contarFolhas(raiz.esq);
-			cont += contarFolhas(raiz.dir);
+			cont += contarFolhas(i.esq);
+			cont += contarFolhas(i.dir);
 		}
 		return cont;
 	}
 
-	// Questão 02
-	public boolean compararArv(No arv2) {
-		return compararArv(raiz, arv2);
+	public int contarNosPreenchidos() {
+		return contarNosPreenchidos(raiz);
 	}
 
-	public boolean compararArv(No raiz, No raiz2) {
-		boolean resp;
-		if (raiz.elemento != raiz2.elemento) {
-			resp = false;
-		} else {
-			boolean compararEsq = compararArv(raiz.esq, raiz2.esq);
-			if (compararEsq) {
-				boolean compararDir = compararArv(raiz.dir, raiz2.dir);
-				if (compararDir) {
-					resp = true;
-				} else {
-					resp = false;
-				}
-			} else {
-				resp = false;
-			}
-		}
-		return resp;
-	}
-
-	// Questão 03
-	public int contarFolhasV() {
-		return contarFolhasV(raiz);
-	}
-
-	private int contarFolhasV(No raiz) {
+	private int contarNosPreenchidos(No i) {
 		int cont = 0;
-		if (raiz != null) {
-			if (raiz.esq == null && raiz.dir == null) {
+		if (i != null) {
+			if (i.esq != null && i.dir != null) {
 				cont++;
 			}
-			cont += contarFolhas(raiz.esq);
-			cont += contarFolhas(raiz.dir);
+			cont += contarNosPreenchidos(i.esq);
+			cont += contarNosPreenchidos(i.dir);
 		}
 		return cont;
+	}
+
+	public int contPares() {
+		return contPares(raiz);
+	}
+
+	private int contPares(No i) {
+		int cont = 0;
+		if (i != null) {
+			// Par?
+			if (i.elemento % 2 == 0) {
+				cont++;
+			}
+			cont += contPares(i.esq);
+			cont += contPares(i.dir);
+		}
+		return cont;
+	}
+
+	public int alturaArvore() {
+		return alturaArvore(raiz);
+	}
+
+	private int alturaArvore(No i) {
+		int alturaEsq = 0, alturaDir = 0;
+		if (i.esq == null && i.dir == null) {
+			return 0;
+		} else if (i != null) {
+			alturaEsq = alturaArvore(i.esq);
+			alturaDir = alturaArvore(i.dir);
+		}
+		return (alturaEsq >= alturaDir) ? alturaEsq + 1 : alturaDir + 1;
+	}
+
+	public static void main(String[] args) throws Exception {
+		ArvoreBinaria arvore = new ArvoreBinaria();
+		arvore.inserir(15);
+		arvore.inserir(20);
+		arvore.inserir(7);
+		arvore.inserir(77);
+		arvore.inserir(13);
+		arvore.inserir(10);
+
+		System.out.println("Mostrar Central:");
+		arvore.mostrarCentral();
+		System.out.println();
+		System.out.println("Folhas:" + arvore.contarFolhas());
+		System.out.println("Nós:" + arvore.contarNosPreenchidos());
+		System.out.println("Altura da arvore: " + arvore.alturaArvore());
 	}
 }

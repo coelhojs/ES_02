@@ -1,6 +1,6 @@
-package Parte_03;
+package OrdenacaoSelection;
 
-public class A_OrdenaçãoSeleção {
+public class OrdenacaoSelecao {
 	static int[] array = new int[5];
 
 	void ordenar(int[] array) {

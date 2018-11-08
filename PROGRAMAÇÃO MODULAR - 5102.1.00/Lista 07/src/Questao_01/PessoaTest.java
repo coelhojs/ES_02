@@ -17,5 +17,4 @@ class PessoaTest {
 	void testNomePadrao() {
 		assertEquals("Nome Padrão", pessoa.getNome());
 	}
-
 }
