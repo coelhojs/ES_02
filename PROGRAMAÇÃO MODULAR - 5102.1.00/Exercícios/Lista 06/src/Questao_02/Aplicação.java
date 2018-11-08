@@ -74,7 +74,7 @@ public class Aplicação {
 	}
 
 	public static void main(String[] args) {
-
+try {
 		Empresa pessoa = new Empresa();
 
 		Object[] options = { "Cadastrar uma Pessoa", "Exibir Clientes", "Exibir Funcionários", "Sair" };
@@ -82,8 +82,9 @@ public class Aplicação {
 				JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		while (opcao != 4) {
 			switch (opcao) {
-			case 1:
+			case 1:} catch (ExcecaoValorNegativo e) {
 				adicionarPessoa(pessoa);
+			}
 				break;
 			case 2:
 				JOptionPane.showMessageDialog(null, pessoa.exibirClientes(), "Clientes cadastrados",

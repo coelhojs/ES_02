@@ -52,4 +52,12 @@ public class Funcionario {
 		return cpf;
 	}
 
+	public void setSalario(double salario) throws Exception {
+		if (salario >= 0) {
+			this.salario = salario;
+		} else {
+			throw new ExcecaoValorNegativo();
+		}
+	}
+
 }
