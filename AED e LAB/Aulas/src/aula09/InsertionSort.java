@@ -1,13 +1,13 @@
-package Aula_09;
+package aula09;
 
 import java.util.Arrays;
 
 public class InsertionSort implements Ordena {
-
+	
 	private int comparacoes;
-
-	InsertionSort() {
-		this.comparacoes = 0;
+	
+	InsertionSort(){
+		this.comparacoes = 0; 
 	}
 
 	public void ordenar(int[] vetor) {
