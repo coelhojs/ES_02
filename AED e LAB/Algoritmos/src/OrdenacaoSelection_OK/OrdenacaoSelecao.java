@@ -1,4 +1,5 @@
-package OrdenacaoSelection;
+package OrdenacaoSelection_OK;
+/*package OrdenacaoSelection;
 
 public class OrdenacaoSelecao {
 	static int[] array = new int[5];
@@ -47,3 +48,4 @@ public class OrdenacaoSelecao {
 	}
 
 }
+*/

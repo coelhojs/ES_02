@@ -2,6 +2,7 @@
 //Troque a posição do menor elemento com o primeiro
 //Volte ao primeiro passo e considere o array a partir da próxima posição
 
+
 package OrdenacaoSelection_OK;
 
 public class Selection {

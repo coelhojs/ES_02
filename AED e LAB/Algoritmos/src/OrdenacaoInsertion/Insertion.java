@@ -1,13 +1,15 @@
+//O vetor é dividido em duas partes: desordenado e ordenado
+//A parte ordenada é preenchida com os valores da parte desordenada em sequencia 
+
 package OrdenacaoInsertion;
 
-public class Insertion implements Ordena {
+public class Insertion {
 	int comparacoes;
 
 	Insertion() {
 		this.comparacoes = 0;
 	}
 
-	@Override
 	public void ordenar(int[] array) {
 		for (int i = 1; i < array.length; i++) {
 			int tmp = array[i];
@@ -20,13 +22,6 @@ public class Insertion implements Ordena {
 		}
 	}
 
-	@Override
-	public int getComparacoes() {
-		return 0;
-	}
-
-
-	@Override
 	public String toString(int array[]) {
 		String resp = " ";
 		for (int i : array) {
