@@ -2,7 +2,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Esta classe irá armazenar uma lista de produtos em estoque.
+ * Esta classe irï¿½ armazenar uma lista de produtos em estoque.
  * 
  * @author Hugo
  * @version 2016.8.29.10
@@ -18,10 +18,6 @@ public class Estoque implements JsonFormatter {
 		numProdutos = 0;
 	}
 	
-	public int getNumProdutos() {
-		return numProdutos;
-	}
-
 	public void adicionar(Produto p) {
 		if (numProdutos < MAX_PRODUTOS) {
 			listaDeProdutos[numProdutos++] = p;
@@ -34,7 +30,7 @@ public class Estoque implements JsonFormatter {
 				return listaDeProdutos[pos];
 			}
 		}
-		return null; // Produto não encontrado.
+		return null; // Produto nï¿½o encontrado.
 	}
 
 	public void remover(String descricao) {
@@ -47,6 +43,10 @@ public class Estoque implements JsonFormatter {
 				numProdutos--;
 			}
 		}
+	}
+
+	public int getNumProdutos() {
+		return numProdutos;
 	}
 
 	public int totalEmEstoque() {

@@ -8,6 +8,10 @@ import org.simpleframework.http.Request;
 public final class EstoqueService {
 	private Estoque estoque;
 
+	public EstoqueService() {
+		estoque = new Estoque();
+	}
+
 	public String adicionar(Request request) {
 		String descricao;
 		float preco;
@@ -73,9 +77,4 @@ public final class EstoqueService {
 		return Float.toString(estoque.valorEmEstoque());
 
 	}
-
-	public EstoqueService() {
-		estoque = new Estoque();
-	}
-
 }
