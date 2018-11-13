@@ -7,12 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Janela extends JFrame {
+public class Window extends JFrame {
 	private JButton butOK, butCancel;
 	private JTextField nome, sexo, estadoCivil, idade;
 	private JLabel nomeLabel, sexoLabel, estCivilLabel, idadeLabel;
 
-	public Janela() {
+	public Window() {
 		super("Cadastro de pessoa");
 		
 		Container cPane = this.getContentPane();
