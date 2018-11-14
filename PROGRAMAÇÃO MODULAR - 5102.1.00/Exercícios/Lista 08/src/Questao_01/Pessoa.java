@@ -1,10 +1,9 @@
 package Questao_01;
 
 public class Pessoa {
-	private String nome, sexo, estadoCivil;
-	private int idade;
+	private String nome, sexo, estadoCivil, idade;
 
-	public Pessoa(String nome, String sexo, String estadoCivil, int idade) {
+	public Pessoa(String nome, String sexo, String estadoCivil, String idade) {
 		this.nome = nome;
 		this.sexo = sexo;
 		this.estadoCivil = estadoCivil;
@@ -13,7 +12,8 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "testando to string";
+		return "Nome: " + getNome() + ", Sexo: " + getSexo() + ", Estado Civil: " + getEstadoCivil() + ", Idade: "
+				+ getIdade();
 	}
 
 	public String getNome() {
@@ -28,7 +28,7 @@ public class Pessoa {
 		return estadoCivil;
 	}
 
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 
@@ -44,7 +44,7 @@ public class Pessoa {
 		this.estadoCivil = estadoCivil;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 }

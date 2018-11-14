@@ -38,6 +38,7 @@ public class JanelaGrafica extends JFrame {
 						JOptionPane.PLAIN_MESSAGE);
 			}
 		});
+
 		butCancel.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
