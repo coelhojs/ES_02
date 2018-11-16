@@ -2,8 +2,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import org.simpleframework.http.Query;
-import org.simpleframework.http.Request;
+import javax.management.Query;
+
+import org.omg.CORBA.Request;
 
 public final class EstoqueService {
 	private Estoque estoque;
