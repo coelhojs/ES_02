@@ -1,4 +1,4 @@
-package HashEncadeamento;
+/*package HashEncadeamento;
 
 public class HashEncadeamento {
 
@@ -17,3 +17,4 @@ public class HashEncadeamento {
 	}
 
 }
+*/
