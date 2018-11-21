@@ -1,8 +1,17 @@
+//ESTÁVEL
+
 package OrdenacaoBubble;
 
 public class Bubble {
+	int[] vetor;
+	int n;
 
-	public static void ordenar(int[] vetor) {
+	Bubble() {
+		this.vetor = new int[] { 9, 8, 4, 3, 7, 5, 6, 1, 2, 5, 1 };
+		this.n = vetor.length;
+	}
+
+	public void ordenar() {
 		int tam = vetor.length;
 		for (int i = 0; i < tam - 1; i++) {
 			for (int j = (tam - 1); j > i; j--) {
@@ -15,25 +24,20 @@ public class Bubble {
 		}
 	}
 
-	public static String asString(int[] vetor) {
-
-		String vetorString = "";
-		vetorString.concat("[ ");
-		for (int i = 0; i < vetor.length; i++) {
-			String vetorPos = Integer.toString(vetor[i]);
-			vetorString.concat(vetorPos);
-			vetorString.concat(", ");
+	void mostrar() {
+		System.out.print("[ ");
+		for (int i = 0; i < n; i++) {
+			System.out.print(vetor[i] + " ");
 		}
-		vetorString.concat(" ]");
-		return vetorString;
+		System.out.println("]");
 	}
 
 	public static void main(String[] args) {
-		int[] vetor = { 101, 115, 30, 63, 47, 20 };
+		Bubble shellsort = new Bubble();
 
-		System.out.println("Vetor original: ");
-		ordenar(vetor);
-		System.out.println(vetor[0] + ", " + vetor[1]);
-
+		shellsort.mostrar();
+		shellsort.ordenar();
+		shellsort.mostrar();
 	}
+
 }

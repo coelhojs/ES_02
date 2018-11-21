@@ -1,27 +1,28 @@
 //Escolha arbitrariamente um pivô
-//Percorra o array a partir da esquerda enquanto array[ i ] < pivô
-//Percorra o array a partir da direita enquanto array[ j ] > pivô
-//Se i ≤ j então troque array[ i ] com array[ j ]
+//Percorra o vetor a partir da esquerda enquanto vetor[ i ] < pivô
+//Percorra o vetor a partir da direita enquanto vetor[ j ] > pivô
+//Se i ≤ j então troque vetor[ i ] com vetor[ j ]
 //Continue o processo enquanto i ≤ j
 
 package OrdenacaoQuicksort;
 
+import OrdenacaoSelection.Selection;
+
 public class Quicksort {
+	int[] vetor;
+	int n;
 
-	static int[] array = { 5, 6, 4, 3, 1, 2, 9, 5 };
-
-	public static void swap(int i, int j) {
-		int aux = i;
-		i = j;
-		j = aux;
+	Quicksort() {
+		this.vetor = new int[] { 9, 8, 4, 3, 7, 5, 6, 1, 2, 5, 1 };
+		this.n = vetor.length;
 	}
 
-	public static void quicksort(int esq, int dir) {
-		int i = esq, j = dir, pivo = array[(dir + esq) / 2];
+	void ordenar(int esq, int dir) {
+		int i = esq, j = dir, pivo = vetor[(dir + esq) / 2];
 		while (i <= j) {
-			while (array[i] < pivo)
+			while (vetor[i] < pivo)
 				i++;
-			while (array[j] > pivo)
+			while (vetor[j] > pivo)
 				j--;
 			if (i <= j) {
 				swap(i, j);
@@ -32,15 +33,31 @@ public class Quicksort {
 		}
 
 		if (esq < j)
-			quicksort(esq, j);
+			ordenar(esq, j);
 		if (i < dir)
-			quicksort(i, dir);
+			ordenar(i, dir);
+	}
+
+	public void swap(int i, int j) {
+		int aux = vetor[i];
+		vetor[i] = vetor[j];
+		vetor[j] = aux;
+	}
+
+	void mostrar() {
+		System.out.print("[ ");
+		for (int i = 0; i < n; i++) {
+			System.out.print(vetor[i] + " ");
+		}
+		System.out.println("]");
 	}
 
 	public static void main(String[] args) {
-		System.out.println(array[0]);
-		quicksort(0, 7);
-		System.out.println(array[0]);
+		Quicksort quicksort = new Quicksort();
+
+		quicksort.mostrar();
+		quicksort.ordenar();
+		quicksort.mostrar();
 	}
 
 }

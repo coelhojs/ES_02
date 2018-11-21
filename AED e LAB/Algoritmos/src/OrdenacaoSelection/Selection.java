@@ -1,3 +1,4 @@
+//NÃO ESTÁVEL, POIS OS VALORES SEGUINTES DO VETOR, SE FOREM IGUAIS AO MENOR, SERÃO 
 //Procure o menor elemento do array
 //Troque a posição do menor elemento com o primeiro
 //Volte ao primeiro passo e considere o array a partir da próxima posição
@@ -9,7 +10,7 @@ public class Selection {
 	int n;
 
 	Selection() {
-		this.vetor = new int[] { 9, 8, 4, 3, 7, 6, 1, 2, 5 };
+		this.vetor = new int[] { 9, 8, 4, 3, 7, 5, 6, 1, 2, 5, 1 };
 		this.n = vetor.length;
 	}
 
@@ -17,11 +18,11 @@ public class Selection {
 		for (int i = 0; i < n; i++) {
 			int menorPos = i;
 			for (int j = 0; j < n; j++) {
-				if (vetor[i] > vetor[j]) {
+				if (vetor[i] < vetor[j]) {
 					menorPos = j;
+					swap(vetor, menorPos, i);
 				}
 			}
-			swap(vetor, menorPos, i);
 		}
 	}
 

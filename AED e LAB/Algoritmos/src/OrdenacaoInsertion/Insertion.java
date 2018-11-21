@@ -1,33 +1,44 @@
+//ESTÁVEL
 //O vetor é dividido em duas partes: desordenado e ordenado
 //A parte ordenada é preenchida com os valores da parte desordenada em sequencia 
 
 package OrdenacaoInsertion;
 
 public class Insertion {
-	int comparacoes;
+	int[] vetor;
+	int n;
 
 	Insertion() {
-		this.comparacoes = 0;
+		this.vetor = new int[] { 9, 8, 4, 3, 7, 6, 1, 2, 5 };
+		this.n = vetor.length;
 	}
 
-	public void ordenar(int[] array) {
-		for (int i = 1; i < array.length; i++) {
-			int tmp = array[i];
+	public void ordenar() {
+		for (int i = 1; i < n; i++) {
+			int temp = vetor[i];
 			int j = i - 1;
-			while ((j >= 0) && (array[j] > tmp)) {
-				array[j + 1] = array[j];
+			while ((j >= 0) && (vetor[j] > temp)) {
+				vetor[j + 1] = vetor[j];
 				j--;
 			}
-			array[j + 1] = tmp;
+			vetor[j + 1] = temp;
 		}
 	}
 
-	public String toString(int array[]) {
-		String resp = " ";
-		for (int i : array) {
-			resp += i + ", ";
+	void mostrar() {
+		System.out.print("[ ");
+		for (int i = 0; i < n; i++) {
+			System.out.print(vetor[i] + " ");
 		}
-		return resp;
+		System.out.println("]");
+	}
+
+	public static void main(String[] args) {
+		Insertion shellsort = new Insertion();
+
+		shellsort.mostrar();
+		shellsort.ordenar();
+		shellsort.mostrar();
 	}
 
 }
