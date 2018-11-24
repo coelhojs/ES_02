@@ -33,10 +33,10 @@ public class Leitor {
 
 				String minusculos = line.toLowerCase();
 
-				String semAcentos = minusculos;
-				System.out.println(Normalizer.normalize(input, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
+				String semAcentos = Normalizer.normalize(minusculos, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]",
+						"");
 
-				String alfanumerico = minusculos.replaceAll("[^\\p{Alpha}\\p{Digit}]\\s+", "");
+				String alfanumerico = semAcentos.replaceAll("[^\\p{Alpha}\\p{Digit}]\\s+", "");
 
 				System.out.println(alfanumerico);
 
