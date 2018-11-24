@@ -56,7 +56,7 @@ public class Quicksort {
 		Quicksort quicksort = new Quicksort();
 
 		quicksort.mostrar();
-		quicksort.ordenar();
+		quicksort.ordenar(0, 11);
 		quicksort.mostrar();
 	}
 
