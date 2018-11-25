@@ -8,12 +8,8 @@ import java.text.Normalizer;
 public class Leitor {
 	public static void main(String[] args) throws IOException {
 
-		ClassLoader loader = Leitor.class.getClassLoader();
-		System.out.println(loader.getResource("Leitor.class"));
-
-		File file = new File(
-				"D:\\Google Drive\\1.Engenharia de Software\\2-2018\\LABORATÓRIO DE COMPUTAÇÃO II - 5104.1.01 - FALTA 17\\Trabalhos\\speech.txt");
-		FileInputStream fileStream = new FileInputStream(file);
+		FileInputStream fileStream = new FileInputStream(
+				"D:\\Desenvolvimento\\4.Semestres\\ES_02\\AED e LAB\\Trabalhos LAB\\Trabalho 02\\speech.txt");
 		InputStreamReader input = new InputStreamReader(fileStream);
 		BufferedReader reader = new BufferedReader(input);
 
@@ -21,14 +17,10 @@ public class Leitor {
 
 		// Initializing counters
 		int palavras = 0;
-		// int sentenceCount = 0;
-		// int characterCount = 0;
-		// int paragraphCount = 1;
-		// int espacos = 0;
 
 		// Reading line by line from the
 		// file until a null is returned
-		while ((line = reader.readLine()) != null) {
+		while ((line = reader.readLine()) != null && palavras <= 1024) {
 			if (!(line.equals(""))) {
 
 				String minusculos = line.toLowerCase();
