@@ -1,5 +1,12 @@
 //NÃO ESTÁVEL
-//APARENTEMENTE É O MAIS DIFÍCIL DE TODOS
+
+//Funcionamento basico:
+//Construa o heap inserindo sistematicamente cada um dos elementos do array
+//Remova sistematicamente cada elemento do heap, reconstrua o heap e 
+//insira o elemento removido na posição do array imediatamente seguinte ao 
+//tamanho corrente do heap
+
+//
 
 package OrdenacaoHeapsort;
 
@@ -8,15 +15,17 @@ public class Heapsort {
 	int n;
 
 	Heapsort() {
-		this.vetor = new int[] { 9, 8, 4, 3, 7, 5, 6, 1, 2, 5, 1 };
+		this.vetor = new int[] { 101, 115, 30, 63, 47, 20 };
 		this.n = vetor.length;
 	}
 
 	public void ordenar() {
-		// Contrucao do heap
+		// Contrucao do heap (invertido). O heap aumenta a medida que sao adicionados os
+		// itens do vetor
+		// a cada insercao, é feita a ordenação entre pai e filho
 		for (int tam = 2; tam <= n; tam++) {
 			constroi(tam);
-
+			mostrar();
 		}
 
 		// Ordenacao propriamente dita
@@ -24,7 +33,6 @@ public class Heapsort {
 		while (tam > 1) {
 			swap(1, tam--);
 			reconstroi(tam);
-
 		}
 	}
 

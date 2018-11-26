@@ -14,14 +14,23 @@ public class Insertion {
 	}
 
 	public void ordenar() {
+		// o loop for inicia sobre o vetor a partir da posicao vetor[1]
+		// a variavel i inicia com valor 1
 		for (int i = 1; i < n; i++) {
+			// atribui o valor de vetor[1] a variavel temp
 			int temp = vetor[i];
+			// a variavel j inicia na posicao anterior a vetor[i], ou seja, vetor[0]
 			int j = i - 1;
+			// se vetor[j] > temp, vetor[i] e substituido por vetor[j]
+			// o while continua ate que as posicoes menores que j estejam ordenadas
+			// o vetor ordenado tem o tamanho = j
 			while ((j >= 0) && (vetor[j] > temp)) {
 				vetor[j + 1] = vetor[j];
 				j--;
 			}
+			// o vetor nao ordenado (j+1) comeca com o valor de temp
 			vetor[j + 1] = temp;
+			mostrar();
 		}
 	}
 
@@ -34,11 +43,11 @@ public class Insertion {
 	}
 
 	public static void main(String[] args) {
-		Insertion shellsort = new Insertion();
+		Insertion insertion = new Insertion();
 
-		shellsort.mostrar();
-		shellsort.ordenar();
-		shellsort.mostrar();
+		insertion.mostrar();
+		insertion.ordenar();
+		insertion.mostrar();
 	}
 
 }
