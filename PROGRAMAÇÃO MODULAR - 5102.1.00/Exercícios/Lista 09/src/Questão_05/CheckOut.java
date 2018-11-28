@@ -1,4 +1,8 @@
+//Criar interface Pagamento com os métodos de pagamento
+//Modificar "aceitaDinheiro" para "aceita"
+
 package Questão_05;
+
 
 	void checkOut(Recibo recibo) {
 		Moeda total = Moeda.zero;

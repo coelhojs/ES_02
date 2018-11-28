@@ -13,12 +13,13 @@ public class Quicksort {
 	int n;
 
 	Quicksort() {
-		this.vetor = new int[] { 9, 8, 4, 3, 7, 5, 6, 1, 2, 5, 1 };
+		this.vetor = new int[] { 3, 4, 9, 2, 5, 8, 2, 1, 7, 4, 6, 2, 9, 8, 5, 1 };
 		this.n = vetor.length;
 	}
 
 	void ordenar(int esq, int dir) {
 		int i = esq, j = dir, pivo = vetor[(dir + esq) / 2];
+		System.out.println("Pivo: " + pivo + ", vetor[" + (dir + esq) / 2 + "]");
 		while (i <= j) {
 			while (vetor[i] < pivo)
 				i++;
@@ -28,6 +29,7 @@ public class Quicksort {
 				swap(i, j);
 				i++;
 				j--;
+				mostrar();
 			}
 
 		}
