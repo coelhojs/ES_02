@@ -1,0 +1,6 @@
+
+public class Time {
+	private String nome;
+	private int saldo;
+	private int gols = 0;
+}

@@ -1,0 +1,37 @@
+
+public class Partida {
+	private static int idPartida = 0;
+	private String pontos, vencedor;
+
+	public Partida(int idPartida, String pontos, String vencedor) {
+		super();
+		Partida.idPartida = idPartida++;
+		this.pontos = pontos;
+		this.vencedor = vencedor;
+	}
+
+	public static int getIdPartida() {
+		return idPartida;
+	}
+
+	public static void setIdPartida(int idPartida) {
+		Partida.idPartida = idPartida;
+	}
+
+	public String getPontos() {
+		return pontos;
+	}
+
+	public void setPontos(String pontos) {
+		this.pontos = pontos;
+	}
+
+	public String getVencedor() {
+		return vencedor;
+	}
+
+	public void setVencedor(String vencedor) {
+		this.vencedor = vencedor;
+	}
+
+}

@@ -1,0 +1,13 @@
+
+public class Partida {
+	private int idPartida;
+	private String pontos, vencedor;
+
+	public Partida(int idPartida, String pontos, String vencedor) {
+		super();
+		this.idPartida = idPartida;
+		this.pontos = pontos;
+		this.vencedor = vencedor;
+	}
+
+}

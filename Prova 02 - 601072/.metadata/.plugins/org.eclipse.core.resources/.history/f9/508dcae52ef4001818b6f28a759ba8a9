@@ -1,0 +1,23 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Aplicacao {
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("Campeonato");
+		System.out.print("Informe a quantidade de times: ");
+		int times = Integer.parseInt(br.readLine());
+
+		while (times > 0) {
+			System.out.print("Nome do time " + times + ":");
+			String nomeTime = br.readLine();
+			Time time = new Time(nomeTime);
+
+			times--;
+		}
+
+	}
+
+}

@@ -1,0 +1,59 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Dados {
+    private int numSectors;
+    private int numTracks;
+    private int startPosition;
+
+    public Dados() {
+    }
+
+    public int getNumSectors() {
+        return numSectors;
+    }
+
+    public void setNumSectors(int numSectors) {
+        this.numSectors = numSectors;
+    }
+
+    public int getNumTracks() {
+        return numTracks;
+    }
+
+    public void setNumTracks(int numTracks) {
+        this.numTracks = numTracks;
+    }
+
+    public int getStartPosition() {
+        return startPosition;
+    }
+
+    public void setStartPosition(int startPostion) {
+        this.startPosition = startPostion;
+    }
+
+    public void dataInFile() {
+        try (BufferedReader br = new BufferedReader(new FileReader("in.txt"))) {
+            String line = br.readLine();
+            int nSectors = Integer.parseInt(line.substring(line.indexOf("=") + 1));
+            setNumSectors(nSectors);
+            line = br.readLine();
+            int nTracks = Integer.parseInt(line.substring(line.indexOf("=") + 1));
+            setNumTracks(nTracks);
+            line = br.readLine();
+            int initPos = Integer.parseInt(line.substring(line.indexOf("=") + 1));
+            setStartPosition(initPos);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+}

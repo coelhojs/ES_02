@@ -1,0 +1,6 @@
+2
+palmeiras
+santos
+2
+1 palmeiras 2 santos
+2 palmeiras 0 santos

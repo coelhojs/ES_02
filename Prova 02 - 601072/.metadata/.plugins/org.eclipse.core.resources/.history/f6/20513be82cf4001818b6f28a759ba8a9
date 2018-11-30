@@ -1,0 +1,11 @@
+
+public class Aplicacao {
+
+	public static void main(String[] args) {
+System.out.println("Campeonato");
+System.out.print("Informe a quantidade de times: ");
+System.out.println();
+
+	}
+
+}

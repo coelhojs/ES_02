@@ -1,0 +1,44 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Aplicacao {
+
+	public static void main(String[] args) throws Exception {
+		Time[] times;
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("Campeonato");
+		System.out.print("Informe a quantidade de times: ");
+		int quantTimes = Integer.parseInt(br.readLine());
+
+		while (quantTimes > 0) {
+			System.out.print("Nome do time " + quantTimes + ":");
+			String nomeTime = br.readLine();
+			Time time = new Time(nomeTime);
+			quantTimes--;
+		}
+
+		System.out.print("Informe a quantidade de partidas: ");
+		int partidas = Integer.parseInt(br.readLine());
+
+		while (partidas < 0) {
+			System.out.println("Gols do primeiro time: ");
+			int gols1 = Integer.parseInt(br.readLine());
+			System.out.println("Nome do primeiro time: ");
+			String time1 = br.readLine();
+			System.out.println("Gols do segundo time: ");
+			int gols2 = Integer.parseInt(br.readLine());
+			System.out.println("Nome do segundo time: ");
+			String time2 = br.readLine();
+			if (gols1 < gols2) {
+				String vencedor = time1;
+			} else if (gols2 < gols1) {
+				String vencedor = time2;
+			} else {
+				String vencedor = "empate";
+			}
+			
+		}
+	}
+}

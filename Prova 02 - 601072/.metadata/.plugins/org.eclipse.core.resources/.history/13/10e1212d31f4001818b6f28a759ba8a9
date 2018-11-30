@@ -1,0 +1,15 @@
+
+public class Times {
+	private Time[] times;
+	private static int n = 0;
+
+	public Times(int quantidade) {
+		times = new Time[quantidade];
+	}
+
+	void inserirTime(Time time) {
+		times[n] = time;
+		n++;
+	}
+
+}
